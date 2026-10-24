@@ -1,0 +1,71 @@
+# ==============================================================================
+# Git Ignore Configuration - SLADSS Project
+# ==============================================================================
+
+# Environment & Credentials
+.env
+*.env
+!.env.example
+
+# Antigravity / Gemini agent artifacts
+.gemini/
+
+# Python & Build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Data Folders (Chỉ cho phép sample mock data)
+data/raw/
+data/processed/
+data/temp/
+!data/sample/
+!data/README.md
+
+# Database & SQLite files
+*.db
+*.sqlite
+*.sqlite3
+data/sladss_local.db
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Power BI backups & cache
+*.pbix.bak
+*.pbit.bak

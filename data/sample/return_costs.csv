@@ -1,0 +1,295 @@
+cost_id,return_id,cost_type,amount,currency
+CST_000001,RET_000001,Phí xử lý giao dịch hoàn tiền,56000.0,VND
+CST_000002,RET_000002,Phí vận chuyển chiều về,96000.0,VND
+CST_000003,RET_000002,Phí đóng gói lại,99000.0,VND
+CST_000004,RET_000003,Phí vận chuyển chiều về,76000.0,VND
+CST_000005,RET_000003,Phí xử lý giao dịch hoàn tiền,93000.0,VND
+CST_000006,RET_000004,Phí kiểm định & lưu kho,95000.0,VND
+CST_000007,RET_000004,Phí xử lý giao dịch hoàn tiền,59000.0,VND
+CST_000008,RET_000005,Phí kiểm định & lưu kho,53000.0,VND
+CST_000009,RET_000005,Phí vận chuyển chiều về,100000.0,VND
+CST_000010,RET_000006,Phí vận chuyển chiều về,104000.0,VND
+CST_000011,RET_000007,Phí vận chuyển chiều về,43000.0,VND
+CST_000012,RET_000007,Phí kiểm định & lưu kho,95000.0,VND
+CST_000013,RET_000008,Phí đóng gói lại,82000.0,VND
+CST_000014,RET_000009,Phí xử lý giao dịch hoàn tiền,80000.0,VND
+CST_000015,RET_000010,Phí xử lý giao dịch hoàn tiền,95000.0,VND
+CST_000016,RET_000010,Phí kiểm định & lưu kho,89000.0,VND
+CST_000017,RET_000011,Phí vận chuyển chiều về,98000.0,VND
+CST_000018,RET_000011,Phí đóng gói lại,122000.0,VND
+CST_000019,RET_000012,Phí xử lý giao dịch hoàn tiền,83000.0,VND
+CST_000020,RET_000012,Phí xử lý giao dịch hoàn tiền,118000.0,VND
+CST_000021,RET_000013,Phí xử lý giao dịch hoàn tiền,146000.0,VND
+CST_000022,RET_000013,Phí xử lý giao dịch hoàn tiền,70000.0,VND
+CST_000023,RET_000014,Phí xử lý giao dịch hoàn tiền,80000.0,VND
+CST_000024,RET_000015,Phí đóng gói lại,105000.0,VND
+CST_000025,RET_000015,Phí vận chuyển chiều về,132000.0,VND
+CST_000026,RET_000016,Phí xử lý giao dịch hoàn tiền,44000.0,VND
+CST_000027,RET_000016,Phí kiểm định & lưu kho,77000.0,VND
+CST_000028,RET_000017,Phí đóng gói lại,54000.0,VND
+CST_000029,RET_000018,Phí kiểm định & lưu kho,49000.0,VND
+CST_000030,RET_000018,Phí kiểm định & lưu kho,117000.0,VND
+CST_000031,RET_000019,Phí kiểm định & lưu kho,121000.0,VND
+CST_000032,RET_000019,Phí vận chuyển chiều về,139000.0,VND
+CST_000033,RET_000020,Phí đóng gói lại,84000.0,VND
+CST_000034,RET_000020,Phí đóng gói lại,104000.0,VND
+CST_000035,RET_000021,Phí xử lý giao dịch hoàn tiền,104000.0,VND
+CST_000036,RET_000022,Phí vận chuyển chiều về,64000.0,VND
+CST_000037,RET_000022,Phí kiểm định & lưu kho,122000.0,VND
+CST_000038,RET_000023,Phí vận chuyển chiều về,135000.0,VND
+CST_000039,RET_000023,Phí kiểm định & lưu kho,88000.0,VND
+CST_000040,RET_000024,Phí kiểm định & lưu kho,32000.0,VND
+CST_000041,RET_000025,Phí xử lý giao dịch hoàn tiền,124000.0,VND
+CST_000042,RET_000025,Phí kiểm định & lưu kho,99000.0,VND
+CST_000043,RET_000026,Phí xử lý giao dịch hoàn tiền,31000.0,VND
+CST_000044,RET_000026,Phí đóng gói lại,120000.0,VND
+CST_000045,RET_000027,Phí xử lý giao dịch hoàn tiền,80000.0,VND
+CST_000046,RET_000028,Phí xử lý giao dịch hoàn tiền,106000.0,VND
+CST_000047,RET_000029,Phí xử lý giao dịch hoàn tiền,41000.0,VND
+CST_000048,RET_000030,Phí kiểm định & lưu kho,89000.0,VND
+CST_000049,RET_000031,Phí kiểm định & lưu kho,69000.0,VND
+CST_000050,RET_000031,Phí đóng gói lại,63000.0,VND
+CST_000051,RET_000032,Phí đóng gói lại,45000.0,VND
+CST_000052,RET_000033,Phí xử lý giao dịch hoàn tiền,35000.0,VND
+CST_000053,RET_000034,Phí vận chuyển chiều về,82000.0,VND
+CST_000054,RET_000034,Phí xử lý giao dịch hoàn tiền,49000.0,VND
+CST_000055,RET_000035,Phí kiểm định & lưu kho,42000.0,VND
+CST_000056,RET_000035,Phí đóng gói lại,147000.0,VND
+CST_000057,RET_000036,Phí kiểm định & lưu kho,127000.0,VND
+CST_000058,RET_000037,Phí kiểm định & lưu kho,62000.0,VND
+CST_000059,RET_000038,Phí xử lý giao dịch hoàn tiền,137000.0,VND
+CST_000060,RET_000039,Phí xử lý giao dịch hoàn tiền,137000.0,VND
+CST_000061,RET_000039,Phí đóng gói lại,150000.0,VND
+CST_000062,RET_000040,Phí vận chuyển chiều về,108000.0,VND
+CST_000063,RET_000041,Phí đóng gói lại,128000.0,VND
+CST_000064,RET_000042,Phí vận chuyển chiều về,44000.0,VND
+CST_000065,RET_000042,Phí kiểm định & lưu kho,139000.0,VND
+CST_000066,RET_000043,Phí xử lý giao dịch hoàn tiền,108000.0,VND
+CST_000067,RET_000044,Phí đóng gói lại,111000.0,VND
+CST_000068,RET_000045,Phí đóng gói lại,144000.0,VND
+CST_000069,RET_000046,Phí xử lý giao dịch hoàn tiền,72000.0,VND
+CST_000070,RET_000046,Phí vận chuyển chiều về,81000.0,VND
+CST_000071,RET_000047,Phí vận chuyển chiều về,38000.0,VND
+CST_000072,RET_000047,Phí vận chuyển chiều về,103000.0,VND
+CST_000073,RET_000048,Phí đóng gói lại,89000.0,VND
+CST_000074,RET_000048,Phí đóng gói lại,78000.0,VND
+CST_000075,RET_000049,Phí đóng gói lại,73000.0,VND
+CST_000076,RET_000049,Phí đóng gói lại,71000.0,VND
+CST_000077,RET_000050,Phí kiểm định & lưu kho,50000.0,VND
+CST_000078,RET_000051,Phí vận chuyển chiều về,70000.0,VND
+CST_000079,RET_000051,Phí kiểm định & lưu kho,37000.0,VND
+CST_000080,RET_000052,Phí đóng gói lại,97000.0,VND
+CST_000081,RET_000053,Phí kiểm định & lưu kho,58000.0,VND
+CST_000082,RET_000053,Phí vận chuyển chiều về,98000.0,VND
+CST_000083,RET_000054,Phí đóng gói lại,90000.0,VND
+CST_000084,RET_000055,Phí kiểm định & lưu kho,83000.0,VND
+CST_000085,RET_000055,Phí kiểm định & lưu kho,54000.0,VND
+CST_000086,RET_000056,Phí vận chuyển chiều về,138000.0,VND
+CST_000087,RET_000056,Phí vận chuyển chiều về,52000.0,VND
+CST_000088,RET_000057,Phí đóng gói lại,135000.0,VND
+CST_000089,RET_000058,Phí xử lý giao dịch hoàn tiền,92000.0,VND
+CST_000090,RET_000059,Phí xử lý giao dịch hoàn tiền,35000.0,VND
+CST_000091,RET_000059,Phí kiểm định & lưu kho,31000.0,VND
+CST_000092,RET_000060,Phí xử lý giao dịch hoàn tiền,52000.0,VND
+CST_000093,RET_000061,Phí xử lý giao dịch hoàn tiền,139000.0,VND
+CST_000094,RET_000062,Phí xử lý giao dịch hoàn tiền,137000.0,VND
+CST_000095,RET_000062,Phí xử lý giao dịch hoàn tiền,105000.0,VND
+CST_000096,RET_000063,Phí kiểm định & lưu kho,114000.0,VND
+CST_000097,RET_000063,Phí vận chuyển chiều về,92000.0,VND
+CST_000098,RET_000064,Phí đóng gói lại,114000.0,VND
+CST_000099,RET_000065,Phí kiểm định & lưu kho,141000.0,VND
+CST_000100,RET_000066,Phí đóng gói lại,130000.0,VND
+CST_000101,RET_000067,Phí vận chuyển chiều về,88000.0,VND
+CST_000102,RET_000068,Phí vận chuyển chiều về,66000.0,VND
+CST_000103,RET_000068,Phí kiểm định & lưu kho,125000.0,VND
+CST_000104,RET_000069,Phí đóng gói lại,80000.0,VND
+CST_000105,RET_000070,Phí đóng gói lại,50000.0,VND
+CST_000106,RET_000071,Phí kiểm định & lưu kho,110000.0,VND
+CST_000107,RET_000072,Phí kiểm định & lưu kho,61000.0,VND
+CST_000108,RET_000072,Phí xử lý giao dịch hoàn tiền,59000.0,VND
+CST_000109,RET_000073,Phí xử lý giao dịch hoàn tiền,44000.0,VND
+CST_000110,RET_000073,Phí kiểm định & lưu kho,144000.0,VND
+CST_000111,RET_000074,Phí đóng gói lại,39000.0,VND
+CST_000112,RET_000074,Phí vận chuyển chiều về,70000.0,VND
+CST_000113,RET_000075,Phí xử lý giao dịch hoàn tiền,43000.0,VND
+CST_000114,RET_000075,Phí kiểm định & lưu kho,45000.0,VND
+CST_000115,RET_000076,Phí xử lý giao dịch hoàn tiền,137000.0,VND
+CST_000116,RET_000076,Phí đóng gói lại,84000.0,VND
+CST_000117,RET_000077,Phí xử lý giao dịch hoàn tiền,136000.0,VND
+CST_000118,RET_000077,Phí đóng gói lại,117000.0,VND
+CST_000119,RET_000078,Phí xử lý giao dịch hoàn tiền,33000.0,VND
+CST_000120,RET_000079,Phí đóng gói lại,77000.0,VND
+CST_000121,RET_000080,Phí vận chuyển chiều về,95000.0,VND
+CST_000122,RET_000081,Phí kiểm định & lưu kho,147000.0,VND
+CST_000123,RET_000082,Phí kiểm định & lưu kho,37000.0,VND
+CST_000124,RET_000083,Phí đóng gói lại,100000.0,VND
+CST_000125,RET_000083,Phí kiểm định & lưu kho,48000.0,VND
+CST_000126,RET_000084,Phí xử lý giao dịch hoàn tiền,104000.0,VND
+CST_000127,RET_000084,Phí kiểm định & lưu kho,80000.0,VND
+CST_000128,RET_000085,Phí kiểm định & lưu kho,39000.0,VND
+CST_000129,RET_000085,Phí đóng gói lại,48000.0,VND
+CST_000130,RET_000086,Phí kiểm định & lưu kho,75000.0,VND
+CST_000131,RET_000087,Phí vận chuyển chiều về,116000.0,VND
+CST_000132,RET_000087,Phí kiểm định & lưu kho,60000.0,VND
+CST_000133,RET_000088,Phí xử lý giao dịch hoàn tiền,55000.0,VND
+CST_000134,RET_000089,Phí kiểm định & lưu kho,61000.0,VND
+CST_000135,RET_000090,Phí đóng gói lại,91000.0,VND
+CST_000136,RET_000090,Phí đóng gói lại,114000.0,VND
+CST_000137,RET_000091,Phí xử lý giao dịch hoàn tiền,50000.0,VND
+CST_000138,RET_000091,Phí kiểm định & lưu kho,54000.0,VND
+CST_000139,RET_000092,Phí xử lý giao dịch hoàn tiền,-109000.0,VND
+CST_000140,RET_000092,Phí đóng gói lại,32000.0,VND
+CST_000141,RET_000093,Phí đóng gói lại,110000.0,VND
+CST_000142,RET_000094,Phí đóng gói lại,31000.0,VND
+CST_000143,RET_000095,Phí kiểm định & lưu kho,71000.0,VND
+CST_000144,RET_000095,Phí xử lý giao dịch hoàn tiền,87000.0,VND
+CST_000145,RET_000096,Phí đóng gói lại,44000.0,VND
+CST_000146,RET_000096,Phí xử lý giao dịch hoàn tiền,126000.0,VND
+CST_000147,RET_000097,Phí vận chuyển chiều về,134000.0,VND
+CST_000148,RET_000098,Phí đóng gói lại,117000.0,VND
+CST_000149,RET_000098,Phí kiểm định & lưu kho,94000.0,VND
+CST_000150,RET_000099,Phí vận chuyển chiều về,54000.0,VND
+CST_000151,RET_000099,Phí xử lý giao dịch hoàn tiền,128000.0,VND
+CST_000152,RET_000100,Phí vận chuyển chiều về,57000.0,VND
+CST_000153,RET_000101,Phí kiểm định & lưu kho,90000.0,VND
+CST_000154,RET_000102,Phí vận chuyển chiều về,144000.0,VND
+CST_000155,RET_000103,Phí vận chuyển chiều về,55000.0,VND
+CST_000156,RET_000104,Phí kiểm định & lưu kho,41000.0,VND
+CST_000157,RET_000104,Phí đóng gói lại,140000.0,VND
+CST_000158,RET_000105,Phí vận chuyển chiều về,147000.0,VND
+CST_000159,RET_000106,Phí kiểm định & lưu kho,40000.0,VND
+CST_000160,RET_000107,Phí xử lý giao dịch hoàn tiền,36000.0,VND
+CST_000161,RET_000107,Phí vận chuyển chiều về,45000.0,VND
+CST_000162,RET_000108,Phí vận chuyển chiều về,86000.0,VND
+CST_000163,RET_000109,Phí vận chuyển chiều về,57000.0,VND
+CST_000164,RET_000110,Phí đóng gói lại,121000.0,VND
+CST_000165,RET_000111,Phí vận chuyển chiều về,63000.0,VND
+CST_000166,RET_000112,Phí vận chuyển chiều về,116000.0,VND
+CST_000167,RET_000113,Phí xử lý giao dịch hoàn tiền,133000.0,VND
+CST_000168,RET_000113,Phí xử lý giao dịch hoàn tiền,48000.0,VND
+CST_000169,RET_000114,Phí kiểm định & lưu kho,33000.0,VND
+CST_000170,RET_000114,Phí xử lý giao dịch hoàn tiền,31000.0,VND
+CST_000171,RET_000115,Phí vận chuyển chiều về,114000.0,VND
+CST_000172,RET_000115,Phí kiểm định & lưu kho,53000.0,VND
+CST_000173,RET_000116,Phí vận chuyển chiều về,96000.0,VND
+CST_000174,RET_000116,Phí xử lý giao dịch hoàn tiền,113000.0,VND
+CST_000175,RET_000117,Phí vận chuyển chiều về,135000.0,VND
+CST_000176,RET_000118,Phí đóng gói lại,35000.0,VND
+CST_000177,RET_000118,Phí vận chuyển chiều về,144000.0,VND
+CST_000178,RET_000119,Phí xử lý giao dịch hoàn tiền,73000.0,VND
+CST_000179,RET_000119,Phí kiểm định & lưu kho,115000.0,VND
+CST_000180,RET_000120,Phí xử lý giao dịch hoàn tiền,106000.0,VND
+CST_000181,RET_000120,Phí đóng gói lại,88000.0,VND
+CST_000182,RET_000121,Phí kiểm định & lưu kho,148000.0,VND
+CST_000183,RET_000121,Phí xử lý giao dịch hoàn tiền,133000.0,VND
+CST_000184,RET_000122,Phí vận chuyển chiều về,63000.0,VND
+CST_000185,RET_000123,Phí xử lý giao dịch hoàn tiền,70000.0,VND
+CST_000186,RET_000124,Phí vận chuyển chiều về,134000.0,VND
+CST_000187,RET_000125,Phí kiểm định & lưu kho,140000.0,VND
+CST_000188,RET_000126,Phí đóng gói lại,136000.0,VND
+CST_000189,RET_000127,Phí đóng gói lại,122000.0,VND
+CST_000190,RET_000127,Phí đóng gói lại,51000.0,VND
+CST_000191,RET_000128,Phí xử lý giao dịch hoàn tiền,92000.0,VND
+CST_000192,RET_000129,Phí vận chuyển chiều về,69000.0,VND
+CST_000193,RET_000129,Phí xử lý giao dịch hoàn tiền,112000.0,VND
+CST_000194,RET_000130,Phí xử lý giao dịch hoàn tiền,54000.0,VND
+CST_000195,RET_000131,Phí xử lý giao dịch hoàn tiền,141000.0,VND
+CST_000196,RET_000131,Phí kiểm định & lưu kho,136000.0,VND
+CST_000197,RET_000132,Phí xử lý giao dịch hoàn tiền,64000.0,VND
+CST_000198,RET_000132,Phí vận chuyển chiều về,118000.0,VND
+CST_000199,RET_000133,Phí vận chuyển chiều về,37000.0,VND
+CST_000200,RET_000133,Phí đóng gói lại,75000.0,VND
+CST_000201,RET_000134,Phí xử lý giao dịch hoàn tiền,47000.0,VND
+CST_000202,RET_000135,Phí vận chuyển chiều về,65000.0,VND
+CST_000203,RET_000135,Phí vận chuyển chiều về,117000.0,VND
+CST_000204,RET_000136,Phí đóng gói lại,95000.0,VND
+CST_000205,RET_000136,Phí đóng gói lại,58000.0,VND
+CST_000206,RET_000137,Phí đóng gói lại,-41000.0,VND
+CST_000207,RET_000138,Phí xử lý giao dịch hoàn tiền,119000.0,VND
+CST_000208,RET_000139,Phí kiểm định & lưu kho,102000.0,VND
+CST_000209,RET_000140,Phí xử lý giao dịch hoàn tiền,45000.0,VND
+CST_000210,RET_000141,Phí xử lý giao dịch hoàn tiền,68000.0,VND
+CST_000211,RET_000142,Phí kiểm định & lưu kho,127000.0,VND
+CST_000212,RET_000143,Phí đóng gói lại,145000.0,VND
+CST_000213,RET_000144,Phí kiểm định & lưu kho,126000.0,VND
+CST_000214,RET_000144,Phí đóng gói lại,146000.0,VND
+CST_000215,RET_000145,Phí xử lý giao dịch hoàn tiền,93000.0,VND
+CST_000216,RET_000145,Phí kiểm định & lưu kho,99000.0,VND
+CST_000217,RET_000146,Phí vận chuyển chiều về,69000.0,VND
+CST_000218,RET_000146,Phí xử lý giao dịch hoàn tiền,56000.0,VND
+CST_000219,RET_000147,Phí vận chuyển chiều về,75000.0,VND
+CST_000220,RET_000147,Phí vận chuyển chiều về,44000.0,VND
+CST_000221,RET_000148,Phí xử lý giao dịch hoàn tiền,104000.0,VND
+CST_000222,RET_000149,Phí đóng gói lại,66000.0,VND
+CST_000223,RET_000149,Phí đóng gói lại,140000.0,VND
+CST_000224,RET_000150,Phí kiểm định & lưu kho,104000.0,VND
+CST_000225,RET_000151,Phí xử lý giao dịch hoàn tiền,125000.0,VND
+CST_000226,RET_000151,Phí đóng gói lại,32000.0,VND
+CST_000227,RET_000152,Phí đóng gói lại,40000.0,VND
+CST_000228,RET_000153,Phí kiểm định & lưu kho,58000.0,VND
+CST_000229,RET_000153,Phí kiểm định & lưu kho,102000.0,VND
+CST_000230,RET_000154,Phí xử lý giao dịch hoàn tiền,96000.0,VND
+CST_000231,RET_000154,Phí xử lý giao dịch hoàn tiền,145000.0,VND
+CST_000232,RET_000155,Phí kiểm định & lưu kho,142000.0,VND
+CST_000233,RET_000156,Phí vận chuyển chiều về,40000.0,VND
+CST_000234,RET_000156,Phí đóng gói lại,104000.0,VND
+CST_000235,RET_000157,Phí kiểm định & lưu kho,86000.0,VND
+CST_000236,RET_000158,Phí xử lý giao dịch hoàn tiền,43000.0,VND
+CST_000237,RET_000158,Phí vận chuyển chiều về,130000.0,VND
+CST_000238,RET_000159,Phí đóng gói lại,139000.0,VND
+CST_000239,RET_000159,Phí xử lý giao dịch hoàn tiền,35000.0,VND
+CST_000240,RET_000160,Phí xử lý giao dịch hoàn tiền,32000.0,VND
+CST_000241,RET_000160,Phí đóng gói lại,122000.0,VND
+CST_000242,RET_000161,Phí vận chuyển chiều về,71000.0,VND
+CST_000243,RET_000161,Phí xử lý giao dịch hoàn tiền,42000.0,VND
+CST_000244,RET_000162,Phí đóng gói lại,64000.0,VND
+CST_000245,RET_000163,Phí vận chuyển chiều về,87000.0,VND
+CST_000246,RET_000164,Phí vận chuyển chiều về,40000.0,VND
+CST_000247,RET_000165,Phí đóng gói lại,124000.0,VND
+CST_000248,RET_000165,Phí kiểm định & lưu kho,45000.0,VND
+CST_000249,RET_000166,Phí đóng gói lại,145000.0,VND
+CST_000250,RET_000167,Phí kiểm định & lưu kho,101000.0,VND
+CST_000251,RET_000168,Phí vận chuyển chiều về,96000.0,VND
+CST_000252,RET_000168,Phí vận chuyển chiều về,59000.0,VND
+CST_000253,RET_000169,Phí xử lý giao dịch hoàn tiền,53000.0,VND
+CST_000254,RET_000170,Phí vận chuyển chiều về,130000.0,VND
+CST_000255,RET_000170,Phí đóng gói lại,59000.0,VND
+CST_000256,RET_000171,Phí vận chuyển chiều về,128000.0,VND
+CST_000257,RET_000171,Phí kiểm định & lưu kho,82000.0,VND
+CST_000258,RET_000172,Phí đóng gói lại,37000.0,VND
+CST_000259,RET_000173,Phí kiểm định & lưu kho,86000.0,VND
+CST_000260,RET_000173,Phí đóng gói lại,75000.0,VND
+CST_000261,RET_000174,Phí kiểm định & lưu kho,84000.0,VND
+CST_000262,RET_000175,Phí xử lý giao dịch hoàn tiền,103000.0,VND
+CST_000263,RET_000175,Phí kiểm định & lưu kho,133000.0,VND
+CST_000264,RET_000176,Phí vận chuyển chiều về,110000.0,VND
+CST_000265,RET_000176,Phí xử lý giao dịch hoàn tiền,76000.0,VND
+CST_000266,RET_000177,Phí đóng gói lại,54000.0,VND
+CST_000267,RET_000177,Phí kiểm định & lưu kho,74000.0,VND
+CST_000268,RET_000178,Phí kiểm định & lưu kho,107000.0,VND
+CST_000269,RET_000179,Phí đóng gói lại,89000.0,VND
+CST_000270,RET_000179,Phí xử lý giao dịch hoàn tiền,71000.0,VND
+CST_000271,RET_000180,Phí vận chuyển chiều về,123000.0,VND
+CST_000272,RET_000181,Phí vận chuyển chiều về,103000.0,VND
+CST_000273,RET_000181,Phí xử lý giao dịch hoàn tiền,36000.0,VND
+CST_000274,RET_000182,Phí kiểm định & lưu kho,34000.0,VND
+CST_000275,RET_000183,Phí vận chuyển chiều về,71000.0,VND
+CST_000276,RET_000183,Phí kiểm định & lưu kho,129000.0,VND
+CST_000277,RET_000184,Phí vận chuyển chiều về,147000.0,VND
+CST_000278,RET_000185,Phí kiểm định & lưu kho,95000.0,VND
+CST_000279,RET_000185,Phí vận chuyển chiều về,128000.0,VND
+CST_000280,RET_000186,Phí xử lý giao dịch hoàn tiền,107000.0,VND
+CST_000281,RET_000186,Phí kiểm định & lưu kho,86000.0,VND
+CST_000282,RET_000187,Phí vận chuyển chiều về,128000.0,VND
+CST_000283,RET_000187,Phí xử lý giao dịch hoàn tiền,137000.0,VND
+CST_000284,RET_000188,Phí đóng gói lại,127000.0,VND
+CST_000285,RET_000189,Phí xử lý giao dịch hoàn tiền,145000.0,VND
+CST_000286,RET_000190,Phí kiểm định & lưu kho,63000.0,VND
+CST_000287,RET_000190,Phí đóng gói lại,61000.0,VND
+CST_000288,RET_000191,Phí xử lý giao dịch hoàn tiền,126000.0,VND
+CST_000289,RET_000191,Phí xử lý giao dịch hoàn tiền,149000.0,VND
+CST_000290,RET_000192,Phí vận chuyển chiều về,114000.0,VND
+CST_000291,RET_000193,Phí vận chuyển chiều về,98000.0,VND
+CST_000292,RET_000193,Phí vận chuyển chiều về,113000.0,VND
+CST_000293,RET_000194,Phí xử lý giao dịch hoàn tiền,59000.0,VND
+CST_000294,RET_000194,Phí xử lý giao dịch hoàn tiền,39000.0,VND

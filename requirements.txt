@@ -1,0 +1,16 @@
+# ==============================================================================
+# SLADSS Core Dependencies (Constitution Approved Stack)
+# ==============================================================================
+
+# Data Manipulation & Validation
+pandas>=2.0.0
+
+# Database Connection & ORM
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# Testing & Quality Assurance
+pytest>=7.0.0

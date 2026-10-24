@@ -1,0 +1,195 @@
+return_id,order_id,return_date,return_reason,return_status
+RET_000001,ORD_000001,2026-08-31,Không liên lạc được người nhận quá 3 lần,completed
+RET_000002,ORD_000002,2025-10-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000003,ORD_000006,2026-02-16,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000004,ORD_000011,2026-01-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000005,ORD_000014,2025-11-24,Không liên lạc được người nhận quá 3 lần,completed
+RET_000006,ORD_000015,2026-03-14,Không liên lạc được người nhận quá 3 lần,completed
+RET_000007,ORD_000019,2026-01-20,Không liên lạc được người nhận quá 3 lần,completed
+RET_000008,ORD_000024,2026-01-07,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000009,ORD_000027,2026-01-01,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000010,ORD_000032,2026-07-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000011,ORD_000035,2025-11-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000012,ORD_000048,2026-08-24,Không liên lạc được người nhận quá 3 lần,completed
+RET_000013,ORD_000049,2025-10-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000014,ORD_000050,2025-12-31,Không liên lạc được người nhận quá 3 lần,completed
+RET_000015,ORD_000056,2026-04-20,Không liên lạc được người nhận quá 3 lần,completed
+RET_000016,ORD_000066,2025-12-01,Không liên lạc được người nhận quá 3 lần,completed
+RET_000017,ORD_000084,2026-08-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000018,ORD_000091,2026-04-11,Không liên lạc được người nhận quá 3 lần,completed
+RET_000019,ORD_000095,2026-04-04,Không liên lạc được người nhận quá 3 lần,completed
+RET_000020,ORD_000102,2026-07-01,Không liên lạc được người nhận quá 3 lần,completed
+RET_000021,ORD_000111,2026-06-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000022,ORD_000136,2026-05-24,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000023,ORD_000144,2025-11-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000024,ORD_000146,2026-03-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000025,ORD_000158,2026-04-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000026,ORD_000169,2025-12-31,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000027,ORD_000171,2026-04-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000028,ORD_000179,2026-06-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000029,ORD_000183,2026-05-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000030,ORD_000186,2026-02-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000031,ORD_000193,2026-02-14,Không liên lạc được người nhận quá 3 lần,completed
+RET_000032,ORD_000202,2025-12-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000033,ORD_000207,2026-01-28,Không liên lạc được người nhận quá 3 lần,completed
+RET_000034,ORD_000214,2026-06-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000035,ORD_000215,2026-01-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000036,ORD_000218,2026-04-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000037,ORD_000226,2026-05-25,Không liên lạc được người nhận quá 3 lần,completed
+RET_000038,ORD_000232,2026-07-22,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000039,ORD_000236,2026-07-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000040,ORD_000237,2026-01-09,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000041,ORD_000256,2026-05-12,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000042,ORD_000261,2026-03-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000043,ORD_000263,2026-03-08,Không liên lạc được người nhận quá 3 lần,completed
+RET_000044,ORD_000266,2025-12-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000045,ORD_000279,2026-01-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000046,ORD_000282,2026-08-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000047,ORD_000286,2026-01-29,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000048,ORD_000294,2026-02-01,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000049,ORD_000299,2026-08-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000050,ORD_000302,2026-09-06,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000051,ORD_000310,2025-10-20,Không liên lạc được người nhận quá 3 lần,completed
+RET_000052,ORD_000320,2026-04-26,Không liên lạc được người nhận quá 3 lần,completed
+RET_000053,ORD_000325,2026-02-28,Không liên lạc được người nhận quá 3 lần,completed
+RET_000054,ORD_000327,2025-11-05,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000055,ORD_000330,2026-02-07,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000056,ORD_000333,2026-02-16,Không liên lạc được người nhận quá 3 lần,completed
+RET_000057,ORD_000334,2026-06-01,Không liên lạc được người nhận quá 3 lần,completed
+RET_000058,ORD_000342,2026-04-17,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000059,ORD_000353,2025-12-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000060,ORD_000356,2026-07-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000061,ORD_000357,2026-03-12,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000062,ORD_000372,2026-04-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000063,ORD_000387,2026-08-30,Không liên lạc được người nhận quá 3 lần,completed
+RET_000064,ORD_000389,2026-03-25,Không liên lạc được người nhận quá 3 lần,completed
+RET_000065,ORD_000391,2026-03-15,Không liên lạc được người nhận quá 3 lần,completed
+RET_000066,ORD_000393,2026-08-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000067,ORD_000405,2025-10-26,Không liên lạc được người nhận quá 3 lần,completed
+RET_000068,ORD_000406,2026-09-30,Không liên lạc được người nhận quá 3 lần,completed
+RET_000069,ORD_000410,2026-09-24,Không liên lạc được người nhận quá 3 lần,completed
+RET_000070,ORD_000424,2026-07-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000071,ORD_000430,2025-10-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000072,ORD_000449,2026-05-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000073,ORD_000461,2025-11-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000074,ORD_000463,2026-03-04,Không liên lạc được người nhận quá 3 lần,completed
+RET_000075,ORD_000467,2026-09-07,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000076,ORD_000482,2026-08-12,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000077,ORD_000491,2026-06-30,Không liên lạc được người nhận quá 3 lần,completed
+RET_000078,ORD_000505,2026-07-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000079,ORD_000506,2026-04-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000080,ORD_000513,2026-01-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000081,ORD_000519,2026-05-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000082,ORD_000521,2026-03-28,Không liên lạc được người nhận quá 3 lần,completed
+RET_000083,ORD_000524,2025-10-13,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000084,ORD_000546,2025-11-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000085,ORD_000550,2025-12-13,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000086,ORD_000551,2026-01-22,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000087,ORD_000554,2026-04-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000088,ORD_000556,2026-06-26,Không liên lạc được người nhận quá 3 lần,completed
+RET_000089,ORD_000561,2026-01-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000090,ORD_000563,2026-06-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000091,ORD_000567,2025-11-22,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000092,ORD_000572,2025-11-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000093,ORD_000575,2026-07-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000094,ORD_000595,2026-05-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000095,ORD_000596,2026-01-27,Không liên lạc được người nhận quá 3 lần,completed
+RET_000096,ORD_000606,2025-12-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000097,ORD_000609,2026-09-28,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000098,ORD_000613,2026-02-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000099,ORD_000624,2026-04-16,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000100,ORD_000625,2026-05-31,Không liên lạc được người nhận quá 3 lần,completed
+RET_000101,ORD_000634,2025-10-11,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000102,ORD_000640,2026-10-01,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000103,ORD_000648,2026-09-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000104,ORD_000663,2026-01-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000105,ORD_000664,2025-11-27,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000106,ORD_000665,2026-06-10,Không liên lạc được người nhận quá 3 lần,completed
+RET_000107,ORD_000671,2026-08-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000108,ORD_000672,2026-03-25,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000109,ORD_000673,2026-05-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000110,ORD_000677,2025-11-19,Không liên lạc được người nhận quá 3 lần,completed
+RET_000111,ORD_000681,2026-01-11,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000112,ORD_000691,2026-03-03,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000113,ORD_000700,2026-08-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000114,ORD_000701,2025-12-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000115,ORD_000706,2026-02-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000116,ORD_000714,2025-10-29,Không liên lạc được người nhận quá 3 lần,completed
+RET_000117,ORD_000715,2026-05-12,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000118,ORD_000726,2026-08-12,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000119,ORD_000734,2026-06-15,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000120,ORD_000744,2026-06-19,Không liên lạc được người nhận quá 3 lần,completed
+RET_000121,ORD_000749,2026-08-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000122,ORD_000750,2025-12-26,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000123,ORD_000763,2026-08-01,Không liên lạc được người nhận quá 3 lần,completed
+RET_000124,ORD_000769,2026-08-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000125,ORD_000779,2026-01-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000126,ORD_000781,2026-09-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000127,ORD_000791,2026-08-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000128,ORD_000793,2026-08-31,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000129,ORD_000804,2026-03-26,Không liên lạc được người nhận quá 3 lần,completed
+RET_000130,ORD_000818,2025-11-10,Không liên lạc được người nhận quá 3 lần,completed
+RET_000131,ORD_000827,2026-03-21,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000132,ORD_000830,2026-02-15,Không liên lạc được người nhận quá 3 lần,completed
+RET_000133,ORD_000839,2026-03-08,Không liên lạc được người nhận quá 3 lần,completed
+RET_000134,ORD_000852,2026-05-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000135,ORD_000860,2026-09-20,Không liên lạc được người nhận quá 3 lần,completed
+RET_000136,ORD_000871,2026-04-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000137,ORD_000875,2026-05-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000138,ORD_000882,2026-09-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000139,ORD_000891,2026-01-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000140,ORD_000895,2026-04-08,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000141,ORD_000905,2026-09-16,Không liên lạc được người nhận quá 3 lần,completed
+RET_000142,ORD_000908,2026-05-13,Không liên lạc được người nhận quá 3 lần,completed
+RET_000143,ORD_000924,2026-02-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000144,ORD_000941,2026-09-24,Sản phẩm lỗi kỹ thuật / không hoạt động,completed
+RET_000145,ORD_000946,2026-01-21,Không liên lạc được người nhận quá 3 lần,completed
+RET_000146,ORD_000951,2026-09-20,Không liên lạc được người nhận quá 3 lần,completed
+RET_000147,ORD_000957,2025-12-26,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000148,ORD_000960,2026-08-24,Không liên lạc được người nhận quá 3 lần,completed
+RET_000149,ORD_000961,2026-05-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000150,ORD_000969,2026-07-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000151,ORD_000972,2026-07-31,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000152,ORD_000976,2026-01-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000153,ORD_000977,2026-05-23,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000154,ORD_000980,2026-02-23,Không liên lạc được người nhận quá 3 lần,completed
+RET_000155,ORD_000986,2026-04-19,Không liên lạc được người nhận quá 3 lần,completed
+RET_000156,ORD_000988,2026-07-24,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000157,ORD_000990,2025-10-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000158,ORD_000995,2025-12-12,Không liên lạc được người nhận quá 3 lần,completed
+RET_000159,ORD_001001,2026-03-23,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000160,ORD_001005,2026-02-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000161,ORD_001010,2026-01-08,Không liên lạc được người nhận quá 3 lần,completed
+RET_000162,ORD_001026,2026-09-11,Không liên lạc được người nhận quá 3 lần,completed
+RET_000163,ORD_001035,2025-10-26,Không liên lạc được người nhận quá 3 lần,completed
+RET_000164,ORD_001045,2026-05-18,Không liên lạc được người nhận quá 3 lần,completed
+RET_000165,ORD_001050,2026-04-16,Không liên lạc được người nhận quá 3 lần,completed
+RET_000166,ORD_001053,2026-09-21,Không liên lạc được người nhận quá 3 lần,completed
+RET_000167,ORD_001058,2026-07-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000168,ORD_001060,2026-03-19,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000169,ORD_001062,2025-11-05,Không liên lạc được người nhận quá 3 lần,completed
+RET_000170,ORD_001063,2025-12-25,Không liên lạc được người nhận quá 3 lần,completed
+RET_000171,ORD_001065,2026-04-08,Không liên lạc được người nhận quá 3 lần,completed
+RET_000172,ORD_001078,2025-11-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000173,ORD_001083,2026-06-03,Không liên lạc được người nhận quá 3 lần,completed
+RET_000174,ORD_001084,2026-05-21,Không liên lạc được người nhận quá 3 lần,completed
+RET_000175,ORD_001095,2026-01-09,Không liên lạc được người nhận quá 3 lần,completed
+RET_000176,ORD_001096,2026-05-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000177,ORD_001103,2026-06-11,Không liên lạc được người nhận quá 3 lần,completed
+RET_000178,ORD_001109,2025-12-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000179,ORD_001113,2026-07-10,Không liên lạc được người nhận quá 3 lần,completed
+RET_000180,ORD_001124,2026-07-06,Không liên lạc được người nhận quá 3 lần,completed
+RET_000181,ORD_001125,2025-12-28,Không liên lạc được người nhận quá 3 lần,completed
+RET_000182,ORD_001127,2025-11-24,Không liên lạc được người nhận quá 3 lần,completed
+RET_000183,ORD_001133,2026-04-07,Giao sai sản phẩm / màu sắc / kích thước,completed
+RET_000184,ORD_001137,2026-07-17,Không liên lạc được người nhận quá 3 lần,completed
+RET_000185,ORD_001142,2026-05-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000186,ORD_001143,2026-10-02,Không liên lạc được người nhận quá 3 lần,completed
+RET_000187,ORD_001148,2025-11-18,Giao hàng quá trễ so với cam kết SLA,completed
+RET_000188,ORD_001166,2026-01-22,Không liên lạc được người nhận quá 3 lần,completed
+RET_000189,ORD_001179,2026-01-20,Hàng hỏng hóc / móp méo trong quá trình vận chuyển,completed
+RET_000190,ORD_001181,2026-02-01,Không liên lạc được người nhận quá 3 lần,completed
+RET_000191,ORD_001182,2026-07-08,Không liên lạc được người nhận quá 3 lần,completed
+RET_000192,ORD_001190,2026-02-28,Khách hàng đổi ý / không còn nhu cầu nhận hàng,completed
+RET_000193,ORD_001193,2026-07-07,Không liên lạc được người nhận quá 3 lần,completed
+RET_000194,ORD_001200,2026-06-08,Không liên lạc được người nhận quá 3 lần,completed

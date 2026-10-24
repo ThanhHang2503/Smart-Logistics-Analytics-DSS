@@ -1,0 +1,73 @@
+# ==============================================================================
+# Docker Compose - SLADSS Containerized Data Platform
+# Services: PostgreSQL 16 + Python 3.11 ETL Service
+# Governance: Hard Constraint #4 (Environment Isolation)
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # ----------------------------------------------------------------------------
+  # Service 1: PostgreSQL Data Warehouse (Staging, Star Schema & Marts)
+  # ----------------------------------------------------------------------------
+  postgres_db:
+    image: postgres:16-alpine
+    container_name: sladss_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-sladss_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-sladss_password}
+      POSTGRES_DB: ${DB_NAME:-sladss_db}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-sladss_user} -d ${DB_NAME:-sladss_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - sladss_network
+
+  # ----------------------------------------------------------------------------
+  # Service 2: Python ETL Pipeline Runner
+  # ----------------------------------------------------------------------------
+  etl_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sladss_etl
+    restart: "no"
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=postgres_db
+      - DB_PORT=5432
+      - DB_USER=${DB_USER:-sladss_user}
+      - DB_PASSWORD=${DB_PASSWORD:-sladss_password}
+      - DB_NAME=${DB_NAME:-sladss_db}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./sql:/app/sql
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    networks:
+      - sladss_network
+    command: ["python", "-m", "pytest", "-v"]
+
+# ------------------------------------------------------------------------------
+# Persistent Storage & Network Topology
+# ------------------------------------------------------------------------------
+volumes:
+  pgdata:
+    name: sladss_pgdata
+
+networks:
+  sladss_network:
+    name: sladss_network
+    driver: bridge
