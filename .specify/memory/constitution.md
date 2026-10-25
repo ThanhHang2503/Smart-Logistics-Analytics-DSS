@@ -1,30 +1,31 @@
-﻿# 📜 SLADSS Project Constitution
+# 📜 SLADSS Project Constitution
 <!-- Smart Logistics Analytics & Decision Support System -->
 <!-- Hiến pháp Dự án — Tài liệu Bất biến — Mọi thay đổi phải được phê duyệt và tăng version -->
 
 > **Tài liệu này có quyền ưu tiên cao nhất trong toàn bộ dự án.**
-> Mọi quyết định kỹ thuật, thiết kế dữ liệu, và quy trình phát triển phải tuân thủ các nguyên tắc được ghi trong đây.
+> Mọi quyết định kỹ thuật, thiết kế dữ liệu, kiến trúc hạ tầng và quy trình phát triển phải tuân thủ nghiêm ngặt các nguyên tắc được ghi trong đây.
 > Bất kỳ ngoại lệ nào cũng phải được ghi chú rõ ràng với lý do kỹ thuật xác đáng.
 
 ---
 
-**Version**: `2.0.0` | **Ratified**: `2026-10-24` | **Last Amended**: `2026-10-24`  
-**Source Document**: `docs/Bao_cao_de_tai_Smart_Logistics_Analytics_DSS.md` (v1.0, 19/10/2026)
+**Version**: `2.1.0` | **Ratified**: `2026-10-24` | **Last Amended**: `2026-10-25`  
+**Source Document**: `docs/Bao_cao_de_tai_Smart_Logistics_Analytics_DSS.md` (Phiên bản 2.0 Containerized & AI-Agent Integrated, 25/10/2026)
 
 ---
 
 ## Mục lục
 
 1. [Tổng quan Dự án](#1-tổng-quan-dự-án)
-2. [Tech Stack & Ràng buộc Công nghệ](#2-tech-stack--ràng-buộc-công-nghệ)
-3. [Cấu trúc Repository Chuẩn](#3-cấu-trúc-repository-chuẩn)
+2. [Hạ tầng Kỹ thuật & Ràng buộc Công nghệ (Docker-Centric Architecture)](#2-hạ-tầng-kỹ-thuật--ràng-buộc-công-nghệ-docker-centric-architecture)
+3. [Cấu trúc Monorepo Chuẩn](#3-cấu-trúc-monorepo-chuẩn)
 4. [Nguyên tắc Thiết kế Dữ liệu & Star Schema](#4-nguyên-tắc-thiết-kế-dữ-liệu--star-schema)
-5. [Quy tắc Chất lượng & Xử lý Pipeline](#5-quy-tắc-chất-lượng--xử-lý-pipeline)
-6. [Bảo mật & Quản trị Dữ liệu](#6-bảo-mật--quản-trị-dữ-liệu)
-7. [Tính Minh bạch của Cảnh báo & Khuyến nghị](#7-tính-minh-bạch-của-cảnh-báo--khuyến-nghị)
-8. [Quy trình Phát triển & Git Workflow](#8-quy-trình-phát-triển--git-workflow)
-9. [Tiêu chí Nghiệm thu Tối thiểu](#9-tiêu-chí-nghiệm-thu-tối-thiểu)
-10. [Governance & Amendments](#10-governance--amendments)
+5. [Quy tắc Chất lượng & Xử lý Pipeline (Zero Silent Drop)](#5-quy-tắc-chất-lượng--xử-lý-pipeline-zero-silent-drop)
+6. [Đặc tả Hệ thống Trí tuệ Nhân tạo: Custom ML & Multi-Agent](#6-đặc-tả-hệ-thống-trí-tuệ-nhân-tạo-custom-ml--multi-agent)
+7. [Bảo mật & Quản trị Dữ liệu](#7-bảo-mật--quản-trị-dữ-liệu)
+8. [Tính Minh bạch của Cảnh báo & Khuyến nghị](#8-tính-minh-bạch-của-cảnh-báo--khuyến-nghị)
+9. [Quy trình Phát triển & Enterprise Git Flow](#9-quy-trình-phát-triển--enterprise-git-flow)
+10. [Tiêu chí Nghiệm thu Tối thiểu (v2.0)](#10-tiêu-chí-nghiệm-thu-tối-thiểu-v20)
+11. [Governance & Amendments](#11-governance--amendments)
 
 ---
 
@@ -36,514 +37,428 @@
 |---|---|
 | **Tên tiếng Anh** | Smart Logistics Analytics & Decision Support System |
 | **Viết tắt** | **SLADSS** |
-| **Tên tiếng Việt** | Hệ thống phân tích dữ liệu và hỗ trợ ra quyết định trong logistics ngược |
-| **Phiên bản tài liệu gốc** | 1.0 — 19/10/2026 |
-| **Định hướng** | Portfolio kết hợp BA + DA + DE |
+| **Tên tiếng Việt** | Hệ thống phân tích dữ liệu, tự động hóa chất lượng và hỗ trợ ra quyết định trong logistics ngược |
+| **Phiên bản báo cáo gốc** | 2.0 (Containerized & AI-Agent Integrated) — 25/10/2026 |
+| **Định hướng chuyên môn** | Kết hợp 4 nhóm năng lực: BA (Phân tích nghiệp vụ) + DE (Kỹ thuật dữ liệu) + DA (Phân tích dữ liệu) + AI Engineering (Học máy & Multi-Agent) |
 
 ### 1.2. Mục tiêu & Phạm vi
 
-SLADSS mô phỏng bài toán doanh nghiệp thương mại điện tử cần theo dõi và phân tích **logistics ngược**, gồm:
+SLADSS mô phỏng bài toán doanh nghiệp thương mại điện tử cần theo dõi, đo lường, dự báo và tối ưu hóa chu trình **logistics ngược (reverse logistics)**, bao gồm:
 
-- Đơn giao thất bại và tỷ lệ giao thất bại theo khu vực / đơn vị vận chuyển.
-- Hàng hoàn trả và tỷ lệ hoàn theo thời gian / nhóm sản phẩm.
-- Chi phí hoàn trả và phân tích nguyên nhân phát sinh chi phí.
-- Hiệu quả hoạt động của từng đơn vị vận chuyển (carrier).
+- Đơn giao thất bại và tỷ lệ giao thất bại theo khu vực / đơn vị vận chuyển (carrier).
+- Hàng hoàn trả và tỷ lệ hoàn theo thời gian / nhóm sản phẩm / lý do hoàn.
+- Chi phí hoàn trả và phân tích cấu trúc chi phí (phí vận chuyển, lưu kho, thẩm định chất lượng).
+- Dự báo sớm rủi ro hoàn đơn đối với đơn hàng mới bằng học máy có giám sát.
+- Chẩn đoán tự động lỗi chất lượng dữ liệu, bóc tách nguyên nhân gốc rễ (Root Cause Analysis) và trợ lý tương tác ngôn ngữ tự nhiên (Decision Copilot).
 
-Hệ thống **không chỉ hiển thị biểu đồ** — dữ liệu đi qua pipeline Python đầy đủ:  
-`ingest → validate → transform → load → dashboard → khuyến nghị có giải thích`
+Hệ thống vận hành end-to-end trên nền tảng Docker:  
+`ingest → validate & audit → transform → star schema load → ML inference & Agent reasoning → web dashboard & BI reporting`
 
 ### 1.3. Các Câu hỏi Phân tích Cốt lõi
 
-> Mọi KPI và tính năng phát triển phải trả lời được ít nhất một câu hỏi dưới đây *(§3.3 tài liệu gốc)*.
+> Mọi KPI, mô hình ML và tác tử AI phải phục vụ trả lời ít nhất một câu hỏi dưới đây *(§3.3 tài liệu gốc)*.
 
-1. Tỷ lệ hoàn hàng thay đổi như thế nào theo tháng?
-2. Khu vực hoặc đơn vị vận chuyển nào có tỷ lệ giao thất bại cao hơn mức tham chiếu?
-3. Nhóm sản phẩm nào có chi phí hoàn trả lớn nhất?
-4. Chi phí hoàn trả tập trung ở một số nguyên nhân hay phân tán?
-5. Nhóm đơn nào nên được ưu tiên điều tra dựa trên tỷ lệ, số lượng và chi phí?
+1. Tỷ lệ hoàn hàng biến động như thế nào theo thời gian và ngành hàng?
+2. Đơn vị vận chuyển (Carrier) hoặc tuyến khu vực nào có tỷ lệ giao thất bại vượt ngưỡng cảnh báo chuẩn?
+3. Chi phí hoàn trả tập trung lớn nhất ở phân khúc sản phẩm hay lý do hoàn trả nào?
+4. Đặc trưng đơn hàng nào (COD, khung giờ đặt, khu vực, giá trị) có xác suất hoàn hàng cao nhất?
+5. Biện pháp can thiệp vận hành nào cần được ưu tiên triển khai theo đề xuất của AI Agent?
 
 ### 1.4. ⚠️ Chính sách Dữ liệu — BẤT BIẾN
 
-> **TUYỆT ĐỐI**: Toàn bộ dữ liệu sử dụng trong dự án phải là dữ liệu **mô phỏng (Synthetic / Mock Data)**.
+> **TUYỆT ĐỐI**: Toàn bộ dữ liệu sử dụng trong dự án phải là **dữ liệu mô phỏng (Synthetic / Mock Data, Zero PII)** có cài đặt có kiểm soát 3–5% lỗi vi phạm logic nhằm kiểm thử chất lượng.
 
 - `customer_key` phải là **mã giả lập** (hash / UUID tổng hợp), **không** chứa tên, số điện thoại, địa chỉ hoặc bất kỳ PII thật nào.
-- Mọi bộ dữ liệu phải được đánh nhãn **"dữ liệu mô phỏng"** trong dashboard và báo cáo.
-- Nếu dùng dữ liệu công khai, phải ghi rõ nguồn và giấy phép.
-- **Không** tạo ra kết luận kinh doanh như thể đó là kết quả của doanh nghiệp thật.
+- Mọi bộ dữ liệu, giao diện dashboard và báo cáo phải được đánh nhãn **"Dữ liệu mô phỏng / Synthetic Data"**.
+- Không giả mạo kết luận kinh doanh như thể đó là số liệu nội bộ của một doanh nghiệp thật ngoài đời.
 
 ---
 
-## 2. Tech Stack & Ràng buộc Công nghệ
+## 2. Hạ tầng Kỹ thuật & Ràng buộc Công nghệ (Docker-Centric Architecture)
 
-> **Nguồn**: §8 và §8.2 tài liệu gốc.  
-> Không thêm công nghệ mới vào `requirements.txt` mà không cập nhật lý do vào `docs/`.
+> **Nguồn**: §4, §5 và §5.2 tài liệu gốc v2.0.  
+> Không tự ý bổ sung công nghệ ngoài danh mục phê duyệt dưới đây.
 
-### 2.1. Stack Được Phê duyệt
+### 2.1. Kiến trúc Cụm 3-Service Docker Compose (BẮT BUỘC)
 
-| Lớp | Công nghệ | Ghi chú |
+Hệ thống chuẩn hóa 100% trên cụm Docker Compose (`docker-compose.yml`), gồm 3 services biệt lập kết nối qua mạng nội bộ (`sladss_network`) và named volume (`pgdata`):
+
+| Service | Container Image / Base | Cổng / Port | Vai trò & Trách nhiệm |
+|---|---|---|---|
+| `postgres_db` | `postgres:16-alpine` | `5432:5432` | **Data Warehouse duy nhất**: Lưu trữ 3 tầng schemas (`staging`, `warehouse`, `marts`) cùng các bảng audit logs (`pipeline_run`, `data_quality_log`). Mở cổng 5432 ra host để Power BI Desktop và DBeaver kết nối trực tiếp. Cấu hình healthcheck `pg_isready`. |
+| `etl_service` | `python:3.11-slim` (Dockerfile) | N/A (Internal) | **Data Engine & ML Worker**: Chạy script sinh dữ liệu, thực hiện xác thực chất lượng (DQ Validation), chuẩn hóa dữ liệu, nạp vào Star Schema với tính idempotent, kích hoạt batch pipeline và chạy test suite Pytest. |
+| `web_dashboard` | `python:3.11-slim` (Streamlit + Plotly) | `8501:8501` | **Interactive UI & AI Chat**: Giao diện trực quan hóa dữ liệu đọc từ schema `marts`, tích hợp khung chat trợ lý AI Decision Support Copilot phục vụ người quản lý vận hành. |
+
+### 2.2. ⛔ Loại bỏ Hoàn toàn SQLite — BẤT BIẾN
+
+> **NGUYÊN TẮC CỨNG**: **TUYỆT ĐỐI CẤM** sử dụng SQLite fallback hoặc lưu trữ dữ liệu trên file `.db` / `.sqlite` cục bộ dưới mọi hình thức.
+> 
+> - Mọi môi trường (kể cả Local Dev, Unit Tests, Integration Tests và Production) bắt buộc kết nối trực tiếp đến PostgreSQL 16 Container (`postgres_db`).
+> - Bộ test suite Pytest phải kết nối và kiểm thử trực tiếp trên cơ sở dữ liệu PostgreSQL thực tế để kiểm chứng DDL, kiểu dữ liệu, ràng buộc Foreign Key và hàm SQL chuyên biệt.
+
+### 2.3. Bảng Công nghệ Được Phê duyệt (Approved Tech Stack)
+
+| Lớp kiến trúc | Công nghệ phê duyệt | Ghi chú & Ràng buộc |
 |---|---|---|
-| **Data Ingestion & Validation** | Python 3.x, Pandas, python-dotenv | Entry point của mọi dữ liệu vào hệ thống |
-| **ORM / DB Connector** | SQLAlchemy, psycopg2-binary | Không hard-code connection string |
-| **Storage — Production** | PostgreSQL | Database duy nhất cho môi trường staging/production |
-| **Storage — Local Test** | SQLite | Chỉ dùng cho unit test; không thay thế PostgreSQL ở production |
-| **Transformation & Modeling** | SQL DDL/DML | Viết trong `sql/` với phân cấp thư mục chuẩn |
-| **BI & Visualization** | Power BI Desktop (PBIX) | File PBIX được commit, **không** commit credentials |
-| **Báo cáo thay thế** | Markdown / CSV export | Dùng khi không có Power BI |
-| **Testing** | Pytest + SQL Validation queries | Bắt buộc cho mọi KPI và pipeline step |
-| **Orchestration (Phase 1)** | Python script thủ công | Airflow chỉ thêm ở phase mở rộng |
-| **Containerization** | Docker (tùy chọn) | Thêm sau khi pipeline chạy ổn định |
-| **Version Control** | Git + GitHub | Commit message theo Conventional Commits |
-| **Cấu hình môi trường** | `.env` + `python-dotenv` | `.env` KHÔNG được commit lên Git |
-
-### 2.2. Quyết định Công nghệ Cứng (Hard Decisions)
-
-- **Chọn MỘT database chính**: PostgreSQL cho mọi môi trường non-test. Không vừa dùng MySQL vừa PostgreSQL.
-- **Không dùng Jupyter Notebook cho pipeline logic**: Notebook chỉ dùng cho EDA. Logic pipeline nằm trong Python module có thể `import` và `pytest`.
-- **FastAPI / React là phần mở rộng tùy chọn**: Không bắt buộc để hoàn thành phiên bản phân tích dữ liệu cốt lõi.
+| **Container Engine** | Docker & Docker Compose | Khởi chạy toàn bộ hệ thống bằng 1 lệnh `docker compose up --build` |
+| **Storage & Warehouse** | PostgreSQL 16 Alpine | Phân tách rõ 3 schemas: `staging`, `warehouse`, `marts` |
+| **ETL & Data Validation** | Python 3.11, Pandas, SQLAlchemy, psycopg2-binary | Chạy trong container `etl_service`, xử lý UTF-8 |
+| **Custom Supervised ML** | `scikit-learn`, `xgboost`, `lightgbm`, `imbalanced-learn` (SMOTE), `shap` | Bắt buộc train mô hình mới phân loại nguy cơ hoàn đơn |
+| **Multi-Agent Framework** | `langchain`, `langgraph` (StateGraph), `pydantic` | Điều phối 3 tác tử chuyên trách; KHÔNG train mới LLM |
+| **LLM Inference Provider** | OpenAI API (`gpt-4o-mini`) hoặc Local LLM qua Ollama (`llama3.1:8b`) | Tích hợp Few-shot Prompting, RAG và Structured Output |
+| **Web Dashboard** | Streamlit, Plotly | Web application tương tác đa chiều nhúng khung chat AI |
+| **Enterprise BI** | Power BI Desktop (.pbix) | Kết nối PostgreSQL container qua cổng 5432 |
+| **Quality Testing** | Pytest, SQL Assertions | Chạy tự động trong container `etl_service` |
+| **Configuration** | `.env` + `python-dotenv` | `.env` được bảo mật nghiêm ngặt, cấm commit lên Git |
 
 ---
 
-## 3. Cấu trúc Repository Chuẩn
+## 3. Cấu trúc Monorepo Chuẩn
 
-> **Nguồn**: §16 tài liệu gốc. Bắt buộc tuân thủ — không được đặt file sai thư mục.
+> **Nguồn**: §9 tài liệu gốc v2.0. Bắt buộc tuân thủ — không đặt file sai vị trí.
 
 ```
 smart-logistics-analytics-dss/
 │
-├── docs/                          # Tài liệu BA, data dictionary, kiến trúc
-│   ├── project-charter.md
-│   ├── requirements/
-│   ├── process/                   # BPMN As-Is / To-Be
-│   ├── data-dictionary.md         # CẬP NHẬT mỗi khi thêm/đổi schema
-│   ├── kpi-definitions.md         # ĐỊNH NGHĨA KPI trước khi viết SQL
-│   └── architecture/
+├── docker-compose.yml             # Cấu hình cụm 3 services: postgres_db, etl_service, web_dashboard
+├── Dockerfile                     # Base image Python 3.11 cho etl_service và web_dashboard
+├── requirements.txt               # Thư viện Python cố định phiên bản
+├── .env.example                   # Biến môi trường mẫu an toàn (không chứa secret)
+├── .gitignore                     # Bỏ qua .env, *.db, pycache, raw data
+├── README.md                      # Hướng dẫn khởi chạy, kiến trúc, giới hạn đề tài
+│
+├── docs/                          # Tài liệu BA, kiến trúc, data dictionary, KPI definitions
+│   ├── Bao_cao_de_tai_Smart_Logistics_Analytics_DSS.md  # Báo cáo đề tài gốc v2.0
+│   ├── data-dictionary.md         # Data dictionary chi tiết 3 schemas
+│   ├── kpi-definitions.md         # Định nghĩa công thức và điều kiện biên KPI
+│   └── architecture/              # Sơ đồ kiến trúc Docker và Agent Workflow
 │
 ├── data/
-│   ├── sample/                    # CHỈ chứa CSV mô phỏng — KHÔNG dữ liệu nhạy cảm
-│   └── README.md                  # Mô tả nguồn gốc và cách tái tạo dữ liệu mẫu
+│   ├── sample/                    # File CSV dữ liệu mô phỏng (Synthetic Data, Zero PII)
+│   └── README.md                  # Hướng dẫn sinh và nguồn gốc dữ liệu
 │
-├── etl/                           # Python ETL modules — có thể import và test
-│   ├── extract.py
-│   ├── validate.py
-│   ├── transform.py
-│   └── load.py
+├── etl/                           # Python ETL modules (Idempotent Pipeline)
+│   ├── extract.py                 # Đọc CSV với encoding UTF-8
+│   ├── validate.py                # Bẫy lỗi QC-001 -> QC-007, ghi log audit
+│   ├── transform.py               # Chuẩn hóa và mapping sang Star Schema
+│   ├── load.py                    # Nạp PostgreSQL với cơ chế Upsert/Idempotent
+│   └── pipeline.py                # Quản lý vòng đời chạy và cập nhật pipeline_run
 │
-├── sql/                           # Toàn bộ DDL/DML — phân cấp rõ ràng
-│   ├── ddl/                       # init_schema.sql — source of truth cho schema
-│   ├── staging/                   # Staging table queries
-│   ├── warehouse/                 # Star Schema: fact + dim tables
-│   ├── marts/                     # Data Mart views phục vụ dashboard
-│   └── tests/                     # SQL validation queries
+├── sql/                           # Toàn bộ SQL Scripts theo phân tầng
+│   ├── ddl/                       # init_schema.sql (Tạo schemas staging, warehouse, marts, logs)
+│   ├── staging/                   # DDL và logic bảng staging
+│   ├── warehouse/                 # DDL Star Schema: 4 Fact + 5 Dimension tables
+│   ├── marts/                     # SQL Views phục vụ Dashboard & AI Text-to-SQL
+│   └── tests/                     # SQL validation queries (Grain, FK integrity, Anti-fanout)
 │
-├── notebooks/                     # CHỈ dùng cho EDA — KHÔNG chứa pipeline logic
+├── ai_agents/                     # Hệ thống AI: Custom ML & LLM Multi-Agent
+│   ├── README.md                  # Kiến trúc và nguyên tắc vận hành AI
+│   ├── custom_ml/                 # Mô hình Machine Learning tự huấn luyện (XGBoost/LightGBM)
+│   │   ├── train_risk_model.py    # Huấn luyện mô hình dự báo rủi ro hoàn đơn + SMOTE
+│   │   ├── predict_risk.py        # Xuất xác suất P(return) cho đơn hàng mới
+│   │   └── explainability.py      # Trích xuất và giải thích đặc trưng bằng SHAP
+│   ├── agents/                    # 3 Tác tử chuyên trách (LangGraph / LangChain)
+│   │   ├── dq_diagnosis_agent.py  # Chẩn đoán lỗi dữ liệu QC-001 -> QC-007
+│   │   ├── rca_agent.py           # Phân tích nguyên nhân gốc rễ bất thường KPI (StateGraph)
+│   │   └── copilot_agent.py       # Trợ lý Text-to-SQL và tư vấn ra quyết định
+│   └── prompts/                   # System prompts, few-shot examples, JSON schemas
+│
+├── web_dashboard/                 # Ứng dụng Web tương tác Streamlit (Port 8501)
+│   ├── README.md                  # Hướng dẫn sử dụng giao diện web
+│   ├── app.py                     # Entry point chính của Streamlit
+│   ├── components/                # UI components (KPI cards, charts, chat box)
+│   └── pages/                     # Các trang nghiệp vụ chuyên sâu
+│
+├── dashboard/                     # Báo cáo Power BI Desktop
+│   └── README.md                  # Hướng dẫn kết nối cổng 5432 container
+│
+├── notebooks/                     # Jupyter Notebooks CHỈ dùng cho EDA và thử nghiệm mô hình
 │   └── exploratory_analysis.ipynb
 │
-├── dashboard/                     # File PBIX và hướng dẫn
-│   └── README.md                  # Hướng dẫn mở và kết nối dashboard
+├── tests/                         # Pytest test suites (chạy trên PostgreSQL Container)
+│   ├── unit/                      # Test KPI logic và hàm tính toán
+│   ├── data/                      # Test bộ quy tắc chất lượng dữ liệu QC
+│   └── integration/               # Test luồng pipeline end-to-end
 │
-├── tests/                         # Pytest test suites
-│   ├── unit/                      # Test KPI logic
-│   ├── data/                      # Test data quality
-│   └── integration/               # Test end-to-end pipeline
-│
-├── scripts/                       # Script tiện ích
-│   ├── generate_mock_data.py      # Sinh dữ liệu mô phỏng
-│   └── setup_db.py                # Khởi tạo database
-│
-├── .env.example                   # CHỈ chứa key names + giá trị mẫu an toàn
-├── .gitignore                     # Phải bao gồm .env, *.db, data/raw/
-├── requirements.txt               # Pinned versions
-└── README.md                      # Hướng dẫn cài đặt, cấu hình, chạy, cấu trúc, giới hạn
+└── scripts/                       # Scripts tiện ích
+    ├── generate_mock_data.py      # Sinh dữ liệu mô phỏng có kiểm soát lỗi
+    └── setup_db.py                # Khởi tạo schemas và phân quyền database
 ```
-
-### 3.1. Quy tắc Đặt File
-
-| Quy tắc | Lý do |
-|---|---|
-| Schema thay đổi → cập nhật `sql/ddl/init_schema.sql` VÀ `docs/data-dictionary.md` | Đồng bộ tài liệu và code |
-| KPI mới → định nghĩa trong `docs/kpi-definitions.md` TRƯỚC khi viết SQL | Tránh SQL và dashboard không nhất quán |
-| Logic pipeline → `etl/*.py` hoặc `scripts/`, KHÔNG trong `notebooks/` | Đảm bảo có thể test và tái chạy |
-| Dữ liệu mẫu → `data/sample/` kèm README ghi rõ đây là mock data | Minh bạch, không nhầm với dữ liệu thật |
 
 ---
 
 ## 4. Nguyên tắc Thiết kế Dữ liệu & Star Schema
 
-> **Nguồn**: §9 và §9.2 tài liệu gốc.  
-> Đây là các nguyên tắc **BẤT BIẾN** — vi phạm sẽ gây sai lệch KPI nghiêm trọng.
+> **Nguồn**: §7 tài liệu gốc v2.0.  
+> Các nguyên tắc dưới đây là **BẤT BIẾN** để bảo đảm tính toàn vẹn số liệu tài chính và vận hành.
 
-### 4.1. Các Thực thể Nghiệp vụ Nguồn (Operational Tables)
+### 4.1. Cấu trúc Star Schema trên PostgreSQL 16
 
-| Thực thể | Trường chính | Ý nghĩa |
-|---|---|---|
-| `orders` | `order_id`, `order_date`, `customer_key` (mã giả), `product_id`, `region_id`, `carrier_id`, `order_value` | Đơn hàng |
-| `shipments` | `shipment_id`, `order_id`, `carrier_id`, `shipped_at`, `delivered_at`, `delivery_status` | Thông tin mỗi lần giao |
-| `returns` | `return_id`, `order_id`, `return_date`, `return_reason`, `return_status` | Sự kiện hoàn trả |
-| `return_costs` | `cost_id`, `return_id`, `cost_type`, `amount`, `currency` | Chi phí phát sinh từ hoàn |
-| `products` | `product_id`, `category`, `product_name` | Danh mục sản phẩm |
-| `regions` | `region_id`, `region_name`, `province_or_area` | Khu vực địa lý |
-| `carriers` | `carrier_id`, `carrier_name` | Đơn vị vận chuyển |
-| `data_quality_log` | `run_id`, `source_file`, `row_number`, `rule_code`, `message` | Lỗi dữ liệu — KHÔNG bỏ qua |
-| `pipeline_run` | `run_id`, `started_at`, `ended_at`, `status`, `rows_read`, `rows_loaded` | Lịch sử mỗi lần chạy pipeline |
+Mô hình kho dữ liệu phân tách rõ ràng 4 Fact Tables và 5 Dimension Tables:
 
-### 4.2. Star Schema — Grain Definitions (BẤT BIẾN)
+| Bảng Fact | Grain (Mức chi tiết bất biến) | Khóa chính nghiệp vụ | Khóa ngoại chính |
+|---|---|---|---|
+| `fact_orders` | **1 dòng = 1 đơn hàng** | `order_key` | `date_key`, `product_key`, `region_key`, `carrier_key` |
+| `fact_shipments` | **1 dòng = 1 lần giao hàng** | `shipment_key` | `order_key`, `carrier_key`, `shipped_date_key` |
+| `fact_returns` | **1 dòng = 1 sự kiện hoàn trả** | `return_key` | `order_key`, `return_date_key`, `reason_key` |
+| `fact_return_costs`| **1 dòng = 1 khoản chi phí phát sinh** | `cost_key` | `return_key`, `order_key`, `cost_date_key` |
 
-> **⚠️ NGUYÊN TẮC GRAIN — KHÔNG ĐƯỢC VI PHẠM**
-
-| Bảng Fact | Grain (Mức chi tiết) | Khóa chính nghiệp vụ |
-|---|---|---|
-| `fact_orders` | **1 dòng = 1 đơn hàng** | `order_key` |
-| `fact_shipments` | **1 dòng = 1 lần giao hàng** | `shipment_key` |
-| `fact_returns` | **1 dòng = 1 sự kiện hoàn trả** | `return_key` |
-| `fact_return_costs` | **1 dòng = 1 khoản chi phí phát sinh** | `cost_key` |
-
-| Bảng Dimension | Nội dung |
+| Bảng Dimension | Vai trò & Nội dung |
 |---|---|
-| `dim_date` | Một ngày (date_key, date, day, month, quarter, year) |
-| `dim_product` | Một sản phẩm / phiên bản lịch sử (SCD nếu cần) |
-| `dim_region` | Một khu vực địa lý |
-| `dim_carrier` | Một đơn vị vận chuyển |
-| `dim_return_reason` | Một lý do hoàn chuẩn hóa |
+| `dim_date` | Chi tiết thời gian (date_key, full_date, day, month, quarter, year, is_weekend) |
+| `dim_product` | Danh mục sản phẩm (product_key, product_id, product_name, category) |
+| `dim_region` | Khu vực địa lý (region_key, region_id, region_name, province_or_area) |
+| `dim_carrier` | Đơn vị vận chuyển (carrier_key, carrier_id, carrier_name) |
+| `dim_return_reason` | Lý do hoàn hàng chuẩn hóa (reason_key, reason_code, reason_description, category) |
 
-### 4.3. ⛔ Quy tắc Cấm JOIN Làm Nhân Số liệu — BẤT BIẾN
+### 4.2. ⛔ Nguyên tắc Chống Lỗi Nhân Dòng (Anti-Fanout Rule) — BẤT BIẾN
 
-**TUYỆT ĐỐI KHÔNG** JOIN trực tiếp các bảng Fact có Grain khác nhau trong một phép tính tổng hợp (`SUM`, `COUNT`, ...) mà không tổng hợp từng bảng về cùng grain trước.
+**TUYỆT ĐỐI KHÔNG** JOIN trực tiếp giữa các bảng Fact có Grain khác nhau (`fact_orders`, `fact_shipments`, `fact_returns`, `fact_return_costs`) trong cùng một câu truy vấn tính tổng (`SUM`, `COUNT`) khi chưa được tổng hợp độc lập về cùng cấp độ Grain.
 
-**Lý do**: Một đơn hàng có thể có nhiều lần giao (`shipments`) VÀ nhiều khoản chi phí (`return_costs`). JOIN trực tiếp tạo tích Cartesian, làm tổng doanh thu hoặc chi phí bị **nhân lên sai**.
+**Lý do**: Một đơn hàng có thể có nhiều lần giao hàng và phát sinh nhiều khoản chi phí hoàn. Phép JOIN trực tiếp sẽ nhân bản số dòng (Cartesian fanout), khiến tổng doanh thu hoặc chi phí bị **phóng đại sai lệch nghiêm trọng**.
 
 ```sql
--- ✅ ĐÚNG: Tổng hợp về grain đơn hàng TRƯỚC KHI kết hợp
-WITH order_costs AS (
-    -- Grain: 1 dòng / 1 đơn hàng (GROUP BY về grain fact_orders)
-    SELECT fr.order_key, SUM(frc.cost_amount) AS total_cost
-    FROM fact_return_costs frc
-    JOIN fact_returns fr USING (return_key)
-    GROUP BY fr.order_key
+-- ✅ ĐÚNG: Tổng hợp chi phí độc lập về grain order_key TRƯỚC KHI kết hợp
+WITH aggregated_costs AS (
+    SELECT order_key, SUM(cost_amount) AS total_return_cost
+    FROM fact_return_costs
+    GROUP BY order_key
 ),
-order_shipments AS (
-    -- Grain: 1 dòng / 1 đơn hàng
-    SELECT order_key, COUNT(*) AS shipment_count
+aggregated_shipments AS (
+    SELECT order_key, COUNT(*) AS total_shipment_attempts
     FROM fact_shipments
     GROUP BY order_key
 )
-SELECT fo.order_key, fo.order_value, oc.total_cost, os.shipment_count
+SELECT 
+    fo.order_key,
+    fo.order_value,
+    COALESCE(ac.total_return_cost, 0) AS total_return_cost,
+    COALESCE(ash.total_shipment_attempts, 0) AS total_shipment_attempts
 FROM fact_orders fo
-LEFT JOIN order_costs oc     USING (order_key)
-LEFT JOIN order_shipments os USING (order_key);
-
--- ❌ SAI: JOIN trực tiếp sẽ nhân số liệu (fanout)
-SELECT fo.order_key, SUM(fo.order_value), SUM(frc.cost_amount)
-FROM fact_orders fo
-JOIN fact_shipments fs    ON fo.order_key = fs.order_key   -- fanout!
-JOIN fact_return_costs frc ON fs.order_key = frc.return_key -- fanout nhân đôi!
-GROUP BY fo.order_key;
+LEFT JOIN aggregated_costs ac       ON fo.order_key = ac.order_key
+LEFT JOIN aggregated_shipments ash  ON fo.order_key = ash.order_key;
 ```
-
-> **Mọi query tổng hợp chéo bảng fact PHẢI có comment giải thích grain và cảnh báo fanout.**
 
 ---
 
-## 5. Quy tắc Chất lượng & Xử lý Pipeline
+## 5. Quy tắc Chất lượng & Xử lý Pipeline (Zero Silent Drop)
 
-> **Nguồn**: §9.3 và §10 tài liệu gốc.
+> **Nguồn**: §5.2 và §8.2 tài liệu gốc v2.0.
 
-### 5.1. ⚠️ Tính Idempotent — BẤT BIẾN
+### 5.1. ⚠️ Tính Idempotent (BẤT BIẾN)
 
-> Pipeline chạy lại nhiều lần trên cùng một tập dữ liệu **KHÔNG ĐƯỢC** sinh bản ghi trùng ngoài ý muốn.
+Pipeline ETL khi chạy lại nhiều lần trên cùng một tập dữ liệu nguồn **KHÔNG ĐƯỢC PHÉP** sinh ra các bản ghi trùng lặp:
+- Sử dụng cơ chế **UPSERT** (`INSERT ... ON CONFLICT DO UPDATE`) dựa trên business key.
+- Bảng staging phải được quản lý theo `run_id` và làm sạch trước mỗi đợt nạp batch.
 
-**Cách thực thi**:
-- Xác định **business key** rõ ràng cho mỗi bảng (ví dụ: `order_id` cho `orders`).
-- Dùng chiến lược **UPSERT** (`INSERT ... ON CONFLICT DO UPDATE`) hoặc nạp theo **batch có kiểm soát**.
-- Bảng staging phải có cơ chế **deduplication** trước khi load vào warehouse.
-- Staging table phải được truncate hoặc có logic idempotent trước khi tái nạp.
+### 5.2. ⚠️ Bộ 7 Quy tắc Chất lượng Dữ liệu (QC-001 đến QC-007)
 
-### 5.2. ⚠️ Xử lý Dữ liệu Lỗi — BẤT BIẾN
+Mọi bản ghi dữ liệu vi phạm bất kỳ quy tắc nào dưới đây **KHÔNG ĐƯỢC ÂM THẦM BỎ QUA (Zero Silent Drop)** mà phải lập tức chuyển vào bảng audit `staging.data_quality_log`:
 
-> **TUYỆT ĐỐI KHÔNG** âm thầm loại bỏ bản ghi lỗi mà không ghi log.
+| Mã lỗi | Tên quy tắc | Tiêu chí vi phạm | Hành động xử lý |
+|---|---|---|---|
+| `QC-001` | **Null Primary Key** | Khóa chính nghiệp vụ rỗng (`order_id IS NULL`, `shipment_id IS NULL`) | Từ chối nạp vào Fact; ghi log |
+| `QC-002` | **Negative Financial Value** | Doanh thu hoặc chi phí có giá trị âm (`order_value < 0`, `cost_amount < 0`) | Cách ly bản ghi; ghi log |
+| `QC-003` | **Date Chronology Violation** | Trình tự thời gian phi logic (`return_date < order_date` hoặc `delivered_at < shipped_at`) | Cách ly bản ghi; ghi log |
+| `QC-004` | **Invalid Status Enum** | Trạng thái giao hàng/hoàn hàng nằm ngoài danh mục chuẩn | Đánh dấu lỗi enum; ghi log |
+| `QC-005` | **Orphan Foreign Key** | Khóa ngoại tham chiếu đến bản ghi không tồn tại trong Dimension tương ứng | Chuyển vào staging; ghi log |
+| `QC-006` | **Duplicate Business Key** | Trùng lặp khóa nghiệp vụ trong cùng một batch nạp | Khử trùng lặp; ghi log bản ghi trùng |
+| `QC-007` | **Format / Currency Anomaly** | Sai định dạng ngày giờ hoặc đơn vị tiền tệ không được hỗ trợ | Từ chối hoặc chuẩn hóa có kiểm toán |
 
-Dòng dữ liệu vi phạm bất kỳ quy tắc nào dưới đây phải được chuyển vào bảng `data_quality_log`:
+### 5.3. Audit Tables: `pipeline_run` & `data_quality_log`
 
-| Quy tắc | Mã lỗi | Ví dụ vi phạm |
-|---|---|---|
-| Khóa chính không được rỗng hoặc trùng | `QC-001` | `order_id IS NULL` hoặc trùng lặp |
-| Ngày phải parse được đúng định dạng | `QC-002` | `order_date = '2026-13-45'` |
-| Ngày hoàn không sớm hơn ngày tạo đơn | `QC-003` | `return_date < order_date` |
-| Chi phí không âm | `QC-004` | `amount = -500` |
-| Tiền tệ thống nhất theo danh sách cho phép | `QC-005` | `currency = 'XYZ'` |
-| Trạng thái phải thuộc danh mục định nghĩa | `QC-006` | `delivery_status = 'unknown_status'` |
-| Khóa ngoại phải tham chiếu thực thể tồn tại | `QC-007` | `carrier_id` không tồn tại trong `carriers` |
+Mọi phiên thực thi pipeline phải được ghi nhận vào `staging.pipeline_run`:
+- `run_id` (UUID), `started_at`, `ended_at`, `status` (`RUNNING`, `SUCCESS`, `FAILED`).
+- `rows_read`, `rows_valid`, `rows_rejected`, `rows_loaded`, `error_detail`.
 
-**Schema `data_quality_log`**:
-
-```sql
-CREATE TABLE data_quality_log (
-    log_id      SERIAL      PRIMARY KEY,
-    run_id      UUID        NOT NULL REFERENCES pipeline_run(run_id),
-    source_file TEXT        NOT NULL,
-    row_number  INTEGER,
-    rule_code   VARCHAR(10) NOT NULL,   -- e.g. 'QC-003'
-    message     TEXT        NOT NULL,   -- mô tả lỗi cụ thể
-    raw_value   TEXT,                   -- giá trị gốc gây lỗi
-    logged_at   TIMESTAMPTZ DEFAULT NOW()
-);
-```
-
-### 5.3. Ghi nhận Pipeline Run — BẮT BUỘC
-
-> Mọi lần thực thi pipeline PHẢI được ghi nhận vào `pipeline_run`.
-
-**Schema `pipeline_run`**:
-
-```sql
-CREATE TABLE pipeline_run (
-    run_id        UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-    source_file   TEXT,
-    started_at    TIMESTAMPTZ NOT NULL,
-    ended_at      TIMESTAMPTZ,
-    status        VARCHAR(20) CHECK (status IN ('RUNNING', 'SUCCESS', 'FAILED')),
-    rows_read     INTEGER,
-    rows_valid    INTEGER,
-    rows_rejected INTEGER,
-    rows_loaded   INTEGER,
-    error_detail  TEXT        -- NULL nếu SUCCESS
-);
-```
-
-**Quy tắc**: Pipeline chỉ được đánh dấu `SUCCESS` khi **tất cả** các bước hoàn tất hợp lệ. Bất kỳ bước nào thất bại phải ghi `FAILED` và điền `error_detail`.
-
-### 5.4. Pseudocode Pipeline Chuẩn
-
-```python
-def run_pipeline(source_file: str) -> None:
-    run_id = create_run_record(source_file, status="RUNNING")
-    try:
-        raw_records         = extract(source_file, run_id)
-        valid, rejected     = validate_and_normalize(raw_records)
-        write_rejected_rows(rejected, run_id)       # -> data_quality_log
-        load_staging(valid, idempotent=True)
-        transform_warehouse()                       # SQL DDL/DML
-        run_data_quality_tests()
-        publish_dashboard_dataset()
-        finish_run_record(run_id, status="SUCCESS", ...)
-    except Exception as e:
-        finish_run_record(run_id, status="FAILED", error_detail=str(e))
-        raise
-```
-
-### 5.5. Kiểm tra Chất lượng Sau Load (Post-Load Validation)
-
-Sau khi load vào warehouse, bắt buộc chạy SQL validation:
-
-- **Uniqueness**: Grain của mỗi fact table không bị vi phạm.
-- **Referential integrity**: Mọi foreign key trong fact phải tồn tại trong dim tương ứng.
-- **KPI reconciliation**: Tổng số đơn trong `fact_orders` khớp với staging source.
-- **No zero-denominator**: Mọi tỷ lệ phải trả về `NULL` khi mẫu số = 0.
+Bảng `staging.data_quality_log` lưu vết chi tiết từng dòng lỗi:
+- `log_id`, `run_id`, `source_file`, `row_number`, `rule_code` (`QC-001`..`QC-007`), `message`, `raw_value`, `logged_at`.
 
 ---
 
-## 6. Bảo mật & Quản trị Dữ liệu
+## 6. Đặc tả Hệ thống Trí tuệ Nhân tạo: Custom ML & Multi-Agent
+
+> **Nguồn**: §6.1, §6.2 và §6.3 tài liệu gốc v2.0.  
+> Đây là định chế cốt lõi phân định ranh giới giữa Machine Learning tự huấn luyện và Agentic AI.
+
+### 6.1. Ma trận Lựa chọn Công nghệ (BẤT BIẾN)
+
+```
+┌───────────────────────────────────────────────────────────────────────────┐
+│                      SLADSS AI ARCHITECTURE MATRIX                         │
+├─────────────────────────────────────┬─────────────────────────────────────┤
+│ 1. CUSTOM TRAIN MACHINE LEARNING    │ 2. MULTI-AGENT SYSTEM               │
+│    (Supervised Predictive Model)    │    (Pretrained LLM + Agentic Graph) │
+├─────────────────────────────────────┼─────────────────────────────────────┤
+│ • Bài toán: Return Risk Prediction  │ • 3 Agents: DQ, RCA, Copilot        │
+│ • BẮT BUỘC TRAIN MÔ HÌNH MỚI        │ • TUYỆT ĐỐI KHÔNG TRAIN MỚI LLM    │
+│ • Stack: scikit-learn, xgboost,     │ • Stack: LangChain, LangGraph,      │
+│   lightgbm, imbalanced-learn, shap  │   Pydantic, OpenAI / Ollama         │
+│ • Output: Xác suất P(return)        │ • Output: Reasoning, Tool Call, SQL │
+└─────────────────────────────────────┴─────────────────────────────────────┘
+```
+
+### 6.2. Mô hình Tự Huấn Luyện Mới (Custom Train ML): Return Risk Predictor
+
+1. **Bản chất kỹ thuật**: Mô hình học máy có giám sát phân loại nhị phân (Binary Classification) được huấn luyện từ dữ liệu lịch sử trong Data Warehouse.
+2. **Biến mục tiêu**: `is_returned ∈ {0, 1}` (1: Đơn bị hoàn trả; 0: Đơn thành công).
+3. **Bộ đặc trưng đầu vào (Features)**:
+   - Thuộc tính đơn hàng: `order_value`, `cod_flag` (thanh toán khi nhận hàng), khung giờ đặt hàng.
+   - Thuộc tính danh mục: `product_category_id`.
+   - Tỷ lệ lịch sử: `carrier_failure_rate_30d`, `region_return_rate_30d`.
+4. **Quy trình Huấn luyện & Đánh giá**:
+   - **Xử lý mất cân bằng lớp (Class Imbalance)**: Áp dụng thuật toán **SMOTE** (Synthetic Minority Over-sampling Technique) từ thư viện `imbalanced-learn`.
+   - **Mô hình triển khai**: So sánh hiệu năng giữa `XGBoostClassifier` và `LGBMClassifier`.
+   - **Chỉ số đánh giá**: Đánh giá dựa trên `PR-AUC` (Precision-Recall AUC), `F1-Score` của lớp thiểu số, và `ROC-AUC`.
+   - **Khả năng giải thích (XAI)**: Sử dụng thư viện `shap` để tính toán TreeSHAP values, trực quan hóa đóng góp của từng đặc trưng vào xác suất rủi ro $P(\text{return})$.
+
+### 6.3. Hệ thống Multi-Agent (Pretrained LLM + Agentic Framework)
+
+> **RÀNG BUỘC CỨNG**: Không tự huấn luyện (pre-train) hay fine-tune mô hình ngôn ngữ lớn từ đầu. Tận dụng LLM có sẵn (OpenAI `gpt-4o-mini` hoặc Local LLM `llama3.1:8b` qua Ollama) kết hợp cùng Framework điều phối `LangGraph` và `LangChain`.
+
+Hệ thống bao gồm 3 tác tử chuyên trách:
+
+#### 1. Data Quality Diagnosis Agent (Giám sát & Bẫy lỗi dữ liệu)
+- **Mục tiêu**: Tự động quét và diễn giải các bản ghi bị từ chối từ `staging.data_quality_log` (QC-001 đến QC-007).
+- **Cơ chế**: Gom nhóm lỗi theo file nguồn hoặc đối tác vận chuyển; áp dụng Pydantic Structured Output để xuất báo cáo chẩn đoán gồm 3 thành phần:
+  1. *Vấn đề phát hiện* (Defect Summary).
+  2. *Tác động đến báo cáo & mô hình* (Downstream Impact).
+  3. *Hướng xử lý đề xuất* (Remediation: Data Imputation / Source System Fix).
+
+#### 2. Root Cause Analysis (RCA) Agent (Phân tích nguyên nhân biến động KPI)
+- **Mục tiêu**: Chẩn đoán và tìm nguyên nhân gốc rễ khi chỉ số vận hành bị lệch bất thường.
+- **Cơ chế**: Xây dựng đồ thị có trạng thái (**StateGraph** qua `LangGraph`) gồm 3 nodes:
+  - **Node 1 (Anomaly Detection)**: Phát hiện chỉ số KPI (tỷ lệ hoàn, chi phí hoàn, tỷ lệ giao thất bại) vượt ngưỡng baseline 2 độ lệch chuẩn ($\mu \pm 2\sigma$).
+  - **Node 2 (Data Mart Drill-down Tool)**: Kích hoạt Function Calling sinh SQL bóc tách đa chiều qua schema `marts` theo `dim_carrier`, `dim_region`, `dim_return_reason`.
+  - **Node 3 (Synthesis & Recommendation)**: Tổng hợp bằng chứng định lượng, xác định nhóm nguyên nhân chi phối và đề xuất giải pháp vận hành.
+
+#### 3. Decision Support Copilot (Trợ lý điều hành & Text-to-SQL)
+- **Mục tiêu**: Cho phép nhà quản lý đặt câu hỏi bằng ngôn ngữ tự nhiên trên Web Dashboard Streamlit và nhận câu trả lời kèm bảng biểu/số liệu tin cậy.
+- **Cơ chế an toàn (Guardrails BẮT BUỘC)**:
+  - **Chỉ đọc (Read-Only)**: Agent chỉ được cấp quyền `SELECT` duy nhất trên schema `marts`. Cấm tuyệt đối quyền can thiệp vào `staging` hay `warehouse`.
+  - **Phòng vệ chia cho 0**: Mọi câu SQL sinh ra có phép chia tỷ lệ bắt buộc sử dụng `NULLIF(denominator, 0)`.
+  - **Phân định Tương quan vs Nhân quả**: Không đưa ra khẳng định nhân quả tuyệt đối nếu dữ liệu chỉ mang tính tương quan.
+
+---
+
+## 7. Bảo mật & Quản trị Dữ liệu
 
 > **Nguồn**: §15 và §16.1 tài liệu gốc.
 
-### 6.1. ⛔ Quy tắc Bảo mật — BẤT BIẾN
+### 7.1. ⛔ Danh mục Cấm Tuyệt đối (Security Guardrails)
 
-| Hành động | Trạng thái |
-|---|---|
-| Commit file `.env` lên Git | **⛔ TUYỆT ĐỐI CẤM** |
-| Commit mật khẩu database dưới bất kỳ dạng nào | **⛔ TUYỆT ĐỐI CẤM** |
-| Commit connection string có thông tin xác thực | **⛔ TUYỆT ĐỐI CẤM** |
-| Commit API key / secret token | **⛔ TUYỆT ĐỐI CẤM** |
-| Commit dữ liệu cá nhân thật (tên, SĐT, địa chỉ) | **⛔ TUYỆT ĐỐI CẤM** |
-| Commit file dữ liệu lớn không cần thiết | **❌ TRÁNH** |
-| Dùng `customer_key` dạng hash/UUID giả lập | **✅ BẮT BUỘC** |
-| Duy trì `.env.example` với key names + giá trị mẫu an toàn | **✅ BẮT BUỘC** |
-| Dùng biến môi trường cho mọi cấu hình kết nối | **✅ BẮT BUỘC** |
+| Hành động | Mức độ | Biện pháp cưỡng chế |
+|---|---|---|
+| Commit file `.env` chứa credential thật | **⛔ CẤM TUYỆT ĐỐI** | Khai báo trong `.gitignore`; kiểm tra trước mỗi commit |
+| Hard-code API Key (OpenAI) hoặc mật khẩu DB | **⛔ CẤM TUYỆT ĐỐI** | Chỉ đọc từ biến môi trường qua `os.getenv` |
+| Sử dụng dữ liệu định danh cá nhân thật (PII) | **⛔ CẤM TUYỆT ĐỐI** | 100% dữ liệu là Synthetic Mock Data |
+| Cấp quyền DDL/DML cho Text-to-SQL Copilot | **⛔ CẤM TUYỆT ĐỐI** | Phân quyền DB user riêng biệt với quyền `SELECT` trên `marts` |
 
-### 6.2. Xử lý Sự cố Lộ Secret
-
-> Nếu vô tình commit secret, **chỉ xóa khỏi file hiện tại là CHƯA ĐỦ**.  
-> Phải: **thu hồi / đổi secret ngay lập tức** + xử lý lịch sử Git (BFG Repo Cleaner hoặc `git filter-branch`).
-
-### 6.3. Template `.env.example`
+### 7.2. Cấu hình `.env.example` Chuẩn
 
 ```dotenv
-# Database Configuration
-DB_HOST=localhost
+# Database Configuration (PostgreSQL 16 Container)
+DB_HOST=postgres_db
 DB_PORT=5432
 DB_NAME=sladss_db
-DB_USER=your_db_user
+DB_USER=sladss_user
 DB_PASSWORD=your_secure_password_here
 
-# Pipeline Configuration
+# Pipeline Settings
 PIPELINE_BATCH_SIZE=1000
 LOG_LEVEL=INFO
 
-# Optional: Power BI
-POWERBI_WORKSPACE_ID=your_workspace_id
-```
+# AI & LLM Configuration
+LLM_PROVIDER=openai                    # openai | ollama
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL_NAME=gpt-4o-mini
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL_NAME=llama3.1:8b
 
-### 6.4. `.gitignore` Bắt buộc Bao gồm
-
-```gitignore
-# Secrets & environment
-.env
-*.env.local
-
-# Database files
-*.db
-*.sqlite
-
-# Raw/sensitive data
-data/raw/
-data/private/
-
-# Python artifacts
-__pycache__/
-*.pyc
-.pytest_cache/
-venv/
-.venv/
-
-# OS artifacts
-.DS_Store
-Thumbs.db
+# Web Dashboard
+STREAMLIT_SERVER_PORT=8501
 ```
 
 ---
 
-## 7. Tính Minh bạch của Cảnh báo & Khuyến nghị
+## 8. Tính Minh bạch của Cảnh báo & Khuyến nghị
 
-> **Nguồn**: §6.2 NFR-08 và §7.1 tài liệu gốc.  
-> Áp dụng cho mọi alert, KPI card, và recommendation trong dashboard.
+> **Nguồn**: §6.2 và §7.1 tài liệu gốc.  
+> Áp dụng cho toàn bộ thông báo, KPI card và đề xuất từ hệ thống AI Copilot.
 
-### 7.1. ⚠️ Yêu cầu Minh bạch — BẮT BUỘC
-
-Mọi cảnh báo KPI và khuyến nghị điều tra phải **đồng thời** cung cấp:
-
-| Yếu tố | Mô tả | Ví dụ |
-|---|---|---|
-| **Công thức** | Cách tính KPI / điều kiện kích hoạt cảnh báo | `tỷ lệ hoàn = số đơn hoàn / số đơn đủ điều kiện × 100%` |
-| **Mẫu số** | Giá trị mẫu số; nếu = 0 → trả `NULL`/`N/A` | `mẫu số = 234 đơn` |
-| **Sample Size** | Số lượng quan sát tối thiểu để kết luận có ý nghĩa | `Chỉ cảnh báo khi N ≥ 30 đơn` |
-| **Kỳ dữ liệu** | Khoảng thời gian và thời điểm cập nhật gần nhất | `Tháng 9/2026, cập nhật 2026-10-01` |
-| **Nhóm liên quan** | Đơn vị vận chuyển / khu vực / sản phẩm cụ thể | `Carrier: ViettelPost, Khu vực: HCM` |
-
-### 7.2. ⛔ Quy tắc Diễn giải — BẤT BIẾN
-
-> **TUYỆT ĐỐI KHÔNG** quy kết nguyên nhân nhân quả khi chỉ có dữ liệu tương quan.
-
-| ❌ KHÔNG dùng | ✅ THAY BẰNG |
-|---|---|
-| "ViettelPost **gây ra** tỷ lệ hoàn cao" | "ViettelPost **có liên quan** đến tỷ lệ hoàn cao" |
-| "Sản phẩm X **làm tăng** chi phí hoàn" | "Sản phẩm X **có chi phí hoàn cao hơn mức tham chiếu**; cần điều tra thêm" |
-| "Do vấn đề chất lượng nên..." | "Quan sát cho thấy...; có thể do... (cần xác nhận thêm)" |
-
-### 7.3. Alert Rule Template
-
-```python
-# Mọi quy tắc cảnh báo phải có đủ các trường sau:
-alert_rule = {
-    "condition":       "delivery_failure_rate > threshold",
-    "threshold":       "configurable (default: 15%)",
-    "min_sample_size": 30,       # Không cảnh báo nếu N < 30
-    "denominator_guard": True,   # Trả NULL nếu mẫu số = 0
-    "display_evidence":  True,   # Hiển thị số đơn và kỳ dữ liệu
-    "causal_claim":      False   # Không tuyên bố nhân quả
-}
-```
+Mọi cảnh báo và khuyến nghị phải đồng thời cung cấp đủ 5 yếu tố minh bạch:
+1. **Công thức tính toán**: Hiển thị rõ công thức và định nghĩa mẫu số.
+2. **Giá trị mẫu số**: Luôn kiểm tra `denominator > 0`; trả về `N/A` nếu mẫu số bằng 0.
+3. **Kích thước mẫu tối thiểu (Sample Size Guardrail)**: Không đưa ra cảnh báo hoặc kết luận nếu số lượng quan sát $N < 30$.
+4. **Khoảng thời gian & Thời điểm cập nhật**: Xác định rõ kỳ dữ liệu đang phân tích.
+5. **Bằng chứng định lượng**: Nêu rõ nhóm thực thể liên quan (Carrier, Region, Category) và số liệu bằng chứng trước khi đưa ra đề xuất.
 
 ---
 
-## 8. Quy trình Phát triển & Git Workflow
+## 9. Quy trình Phát triển & Enterprise Git Flow
 
-> **Nguồn**: §16.1 tài liệu gốc.
-
-### 8.1. Commit Message Convention (Conventional Commits)
+### 9.1. Chuẩn mực Commit (Conventional Commits)
 
 ```
-<type>(<scope>): <mô tả ngắn>
+<type>(<scope>): <mô tả ngắn bằng tiếng Anh hoặc tiếng Việt>
 
 Types : feat | fix | docs | refactor | test | chore | style
-Scopes: etl | sql | dashboard | data | tests | docs | ci
+Scopes: etl | sql | ml | agent | dashboard | tests | docker | docs
 
 Ví dụ:
-  feat(sql): add return-cost KPI view in marts/
-  fix(etl): handle NULL carrier_id in validate.py
-  docs(data-dictionary): update fact_returns grain definition
-  test(pipeline): add idempotency test for load_staging()
+  feat(agent): implement LangGraph state graph for RCA agent
+  feat(ml): train return risk classifier using LightGBM and SMOTE
+  fix(etl): enforce QC-003 date chronology validation in validate.py
+  feat(dashboard): add chat UI component for Decision Copilot
 ```
 
-### 8.2. Checklist Trước Khi Push
+### 9.2. Kế hoạch Triển khai Chuẩn 12 Tuần
 
-```bash
-git status           # Kiểm tra file thay đổi
-git diff --staged    # Xem nội dung sắp commit
-# Đảm bảo KHÔNG có: .env | *.db | data/raw/ | credentials
-git push origin <branch>
-```
-
-### 8.3. Thứ tự Phát triển Khuyến nghị
-
-| Bước | Nội dung | Đầu ra kiểm chứng |
-|---|---|---|
-| 1 | Tài liệu BA (problem statement, KPI definition, ERD) | `docs/` hoàn chỉnh |
-| 2 | Mock data với trường hợp bình thường và lỗi | `data/sample/*.csv` |
-| 3 | DDL và khởi tạo database | `sql/ddl/init_schema.sql` |
-| 4 | ETL pipeline với validate + log | `etl/*.py` chạy được |
-| 5 | SQL KPI và đối chiếu test cases | `sql/marts/`, `tests/` |
-| 6 | Star Schema và kiểm tra grain | `sql/warehouse/` |
-| 7 | Power BI dashboard | Dashboard 3 trang |
-| 8 | Pytest tests và SQL validation | Test report |
-| — | *(Tùy chọn)* Docker, FastAPI, Airflow | Phase mở rộng |
+- **Tuần 1**: Khởi tạo Repository, Hiến pháp dự án (`constitution.md`) & Hạ tầng Docker ban đầu.
+- **Tuần 2**: Phân tích nghiệp vụ BA (BRD, BPMN As-Is/To-Be, Use Cases).
+- **Tuần 3**: Hoàn thiện Docker Compose & DDL Database (PostgreSQL 16 schemas).
+- **Tuần 4**: Bộ sinh dữ liệu mô phỏng (Synthetic Data Generator 1.200+ đơn, 3-5% lỗi QC).
+- **Tuần 5**: Pipeline ETL Idempotent & Quản trị chất lượng dữ liệu (QC-001 -> QC-007).
+- **Tuần 6**: Kho dữ liệu Star Schema & Các SQL Data Mart Views.
+- **Tuần 7**: Huấn luyện Custom ML Model (XGBoost/LightGBM) dự báo rủi ro hoàn đơn + SHAP.
+- **Tuần 8**: Xây dựng cụm AI Multi-Agent (LangGraph: DQ Agent, RCA Agent, Text-to-SQL Copilot).
+- **Tuần 9**: Phát triển Web Dashboard tương tác bằng Streamlit tích hợp khung chat Copilot.
+- **Tuần 10**: Thiết kế Báo cáo Power BI Desktop kết nối PostgreSQL container qua cổng 5432.
+- **Tuần 11**: Kiểm thử toàn diện Pytest (100% Passed trên container) & Tối ưu hóa hiệu năng.
+- **Tuần 12**: Đóng gói dự án, ghi hình video demo, tài liệu bàn giao portfolio.
 
 ---
 
-## 9. Tiêu chí Nghiệm thu Tối thiểu
+## 10. Tiêu chí Nghiệm thu Tối thiểu (v2.0)
 
-> **Nguồn**: §14.2 tài liệu gốc.  
-> Dự án chỉ được coi là **hoàn thành** khi đáp ứng đủ 8 tiêu chí sau.
+Dự án chỉ được coi là **hoàn thành đạt chuẩn nghiệm thu** khi thỏa mãn đầy đủ 9 tiêu chí sau:
 
-| # | Tiêu chí | Cách kiểm tra |
-|---|---|---|
-| 1 | Có ít nhất một bộ dữ liệu mẫu được ghi rõ là **dữ liệu mô phỏng** | Nhãn trong README và dashboard |
-| 2 | Có tài liệu định nghĩa **KPI và mẫu số** đầy đủ | `docs/kpi-definitions.md` |
-| 3 | Có thể chạy **pipeline end-to-end** từ CSV đến dashboard | `README.md` hướng dẫn, chạy thực tế được |
-| 4 | Có **kiểm tra chất lượng dữ liệu** và nhật ký cho mỗi lần chạy | `data_quality_log` + `pipeline_run` |
-| 5 | Có ít nhất **3 trang/nhóm phân tích** hoặc dashboard tương đương | Power BI hoặc báo cáo Markdown |
-| 6 | Có ít nhất **5 insight** theo cấu trúc: quan sát → bằng chứng → diễn giải → đề xuất | Báo cáo phân tích |
-| 7 | Có **test cases** cho KPI chính và trường hợp dữ liệu lỗi | `tests/` với Pytest |
-| 8 | **README** nêu đủ: môi trường, cấu hình, cách chạy, cấu trúc thư mục, giới hạn | `README.md` |
+1. **Khởi chạy 1 lệnh (Docker-Centric)**: Toàn bộ hệ thống chạy thành công bằng `docker compose up --build`, sẵn sàng 3 services (`postgres_db`, `etl_service`, `web_dashboard`).
+2. **Không tồn tại SQLite**: 100% truy vấn dữ liệu và kiểm thử thực hiện trên PostgreSQL 16 Alpine.
+3. **Bộ dữ liệu mô phỏng minh bạch**: Có ít nhất 1.200+ đơn hàng synthetic, đánh nhãn rõ ràng, không chứa PII.
+4. **Star Schema chuẩn Grain & Anti-Fanout**: 4 Fact Tables và 5 Dimension Tables; không xảy ra lỗi nhân dòng trong các views.
+5. **Pipeline ETL Idempotent & Audit đầy đủ**: Ghi nhận chính xác vào `pipeline_run` và bẫy đủ các lỗi QC-001 -> QC-007 vào `data_quality_log`.
+6. **Custom ML Model được huấn luyện**: Huấn luyện thành công mô hình XGBoost/LightGBM dự báo xác suất hoàn đơn, có cân bằng SMOTE và giải thích SHAP.
+7. **Hệ thống Multi-Agent hoạt động**: Triển khai đủ 3 tác tử: DQ Diagnosis Agent, RCA Agent (LangGraph), Decision Support Copilot (Text-to-SQL an toàn).
+8. **Web Dashboard & Power BI**: Web Streamlit (cổng 8501) hoạt động mượt mà kèm chat Copilot; file Power BI kết nối thành công cổng 5432.
+9. **Test Suite Đạt 100%**: Bộ kiểm thử Pytest chạy tự động trong container kiểm chứng toàn bộ tính năng và bẫy lỗi.
 
 ---
 
-## 10. Governance & Amendments
+## 11. Governance & Amendments
 
-### 10.1. Quyền ưu tiên Tài liệu
+### 11.1. Thứ bậc Hiệu lực Tài liệu
 
 ```
-constitution.md  >  docs/kpi-definitions.md  >  docs/data-dictionary.md  >  Code
+constitution.md  >  docs/kpi-definitions.md  >  docs/data-dictionary.md  >  Source Code
 ```
 
-Khi có mâu thuẫn giữa tài liệu và code, **tài liệu thắng** — code phải được cập nhật để khớp.
+Khi có bất kỳ sự khác biệt hoặc mâu thuẫn nào giữa tài liệu và mã nguồn, **Hiến pháp dự án (`constitution.md`) luôn giữ quyền ưu tiên cao nhất**.
 
-### 10.2. Quy trình Thay đổi Constitution
+### 11.2. Quy trình Tu chỉnh Hiến pháp
 
-1. Mở issue mô tả lý do thay đổi và tác động.
-2. Cập nhật phần liên quan với comment giải thích.
-3. **Tăng version** theo Semantic Versioning:
-   - **PATCH** (`x.x.+1`): Làm rõ ngôn ngữ, sửa typo.
-   - **MINOR** (`x.+1.0`): Thêm nguyên tắc mới không phá vỡ nguyên tắc cũ.
-   - **MAJOR** (`+1.0.0`): Thay đổi nguyên tắc bất biến hiện có.
-4. Cập nhật trường `Last Amended` ở đầu file.
-
-### 10.3. Dependency Management
-
-- Không thêm dependency mới vào `requirements.txt` mà không ghi lý do vào `docs/`.
-- Pin phiên bản cụ thể trong `requirements.txt` (không dùng `>=` không có upper bound).
-- Xem xét tác động bảo mật trước khi thêm thư viện mới.
-
----
-
-*"Thước đo thành công không phải số lượng công nghệ, mà là khả năng giải thích bài toán, định nghĩa dữ liệu và KPI chính xác, chứng minh pipeline hoạt động, diễn giải insight có căn cứ và giúp người khác chạy lại được project."*
-
-— Tài liệu đề tài SLADSS, §Kết luận
+Mọi điều chỉnh Hiến pháp phải tuân thủ Semantic Versioning:
+- **PATCH** (`x.x.+1`): Sửa lỗi chính tả, làm rõ ngôn từ diễn đạt.
+- **MINOR** (`x.+1.0`): Bổ sung thêm nguyên tắc, module hoặc công nghệ mới mà không phá vỡ nguyên tắc cũ.
+- **MAJOR** (`+1.0.0`): Thay đổi cấu trúc cốt lõi, thay đổi hạ tầng cơ sở hoặc định chế bất biến.
+Mọi tu chỉnh phải cập nhật trường `Last Amended` và ghi nhận tóm tắt vào lịch sử tài liệu.
