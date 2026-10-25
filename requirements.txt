@@ -1,11 +1,11 @@
 # ==============================================================================
-# SLADSS Core Dependencies (Constitution Approved Stack)
+# SLADSS Core Dependencies (Constitution Approved Stack v2.0)
 # ==============================================================================
 
 # Data Manipulation & Validation
 pandas>=2.0.0
 
-# Database Connection & ORM
+# Database Connection & ORM (PostgreSQL 16 Container)
 sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.0
 
@@ -14,3 +14,20 @@ python-dotenv>=1.0.0
 
 # Testing & Quality Assurance
 pytest>=7.0.0
+
+# Web Dashboard & Interactive Visualization
+streamlit>=1.30.0
+plotly>=5.18.0
+
+# Custom Machine Learning (Return Risk Prediction - Supervised ML)
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.1.0
+imbalanced-learn>=0.11.0
+shap>=0.43.0
+
+# AI Multi-Agent & LLM Framework (Pretrained LLM + Agentic Orchestration)
+langchain>=0.2.0
+langchain-community>=0.2.0
+langgraph>=0.1.0
+pydantic>=2.5.0
