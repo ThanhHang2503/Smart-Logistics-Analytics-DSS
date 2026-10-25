@@ -5,10 +5,10 @@
 
 [![Docker](https://img.shields.io/badge/Docker%20Compose-PostgreSQL%2016-blue?logo=docker)](docker-compose.yml)
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python)](Dockerfile)
-[![Database](https://img.shields.io/badge/Storage-PostgreSQL%20%7C%20SQLite%20Fallback-336791?logo=postgresql)](sql/ddl/)
+[![Database](https://img.shields.io/badge/Storage-PostgreSQL%2016%20Alpine-336791?logo=postgresql)](sql/ddl/)
 [![Architecture](https://img.shields.io/badge/Schema-Star%20Schema%20(Kimball)-orange)](sql/ddl/02_star_schema.sql)
-[![Testing](https://img.shields.io/badge/Testing-Pytest%20(7%2F7%20Passed)-brightgreen?logo=pytest)](tests/)
-[![Governance](https://img.shields.io/badge/Constitution-v2.0.0-purple)](.specify/memory/constitution.md)
+[![Testing](https://img.shields.io/badge/Testing-Pytest%20(100%25%20Passed)-brightgreen?logo=pytest)](tests/)
+[![Governance](https://img.shields.io/badge/Constitution-v2.1.0-purple)](.specify/memory/constitution.md)
 
 ---
 
@@ -172,10 +172,15 @@ docker-compose run --rm etl_service pytest -v
 
 ---
 
-### 💻 PHƯƠNG ÁN 2: Khởi chạy Cục bộ bằng Python venv & SQLite (Phương án phụ cho Developer)
-Dành cho lập trình viên muốn debug nhanh từng file mà không cần bật Docker.
+### 💻 Khởi chạy Cục bộ Kết nối Trực tiếp PostgreSQL Container (Developer Mode)
+Dành cho lập trình viên muốn phát triển và debug trực tiếp trên môi trường máy host kết nối đến container database:
 
-#### Bước 1: Tạo và kích hoạt môi trường ảo Python
+#### Bước 1: Khởi động service database PostgreSQL
+```bash
+docker compose up -d postgres_db
+```
+
+#### Bước 2: Tạo và kích hoạt môi trường ảo Python
 ```bash
 python -m venv venv
 
@@ -186,31 +191,27 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-#### Bước 2: Cài đặt các gói phụ thuộc
+#### Bước 3: Cài đặt các gói phụ thuộc
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Bước 3: Bật cờ SQLite Fallback trong `.env`
-Sao chép `.env.example` thành `.env`, sau đó đặt:
-```ini
-USE_SQLITE_FALLBACK=true
-SQLITE_DB_PATH=data/sladss_local.db
-```
-
-#### Bước 4: Thực thi tuần tự các bước
+#### Bước 4: Khởi tạo database và chạy Pipeline
 ```bash
-# 1. Tạo bảng SQLite
+# 1. Khởi tạo schema trên PostgreSQL (port 5432)
 python scripts/setup_db.py
 
-# 2. Sinh dữ liệu mô phỏng
+# 2. Sinh dữ liệu mô phỏng (Synthetic Data)
 python scripts/generate_sample_data.py
 
-# 3. Chạy pipeline ETL
+# 3. Chạy pipeline ETL Idempotent
 python -m etl.pipeline
 
-# 4. Kiểm thử
+# 4. Kiểm thử tự động trên PostgreSQL
 pytest -v
+
+# 5. Khởi chạy Web Dashboard Streamlit
+streamlit run web_dashboard/app.py --server.port=8501
 ```
 
 ---
